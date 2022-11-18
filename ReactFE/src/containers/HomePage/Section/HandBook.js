@@ -1,0 +1,61 @@
+import React, { Component } from "react";
+
+import { connect } from "react-redux";
+// import { FormattedMessage } from "react-intl";
+import Slider from "react-slick";
+class HandBook extends Component {
+  render() {
+    return (
+      <>
+        <div className="section-share section-handbook">
+          <div className="section-container">
+            <div className="section-header">
+              <span className="title-section"> Chuyên Khoa Phổ Biến</span>
+              <button type="button" className="btn-section">
+                {" "}
+                Xem them
+              </button>
+            </div>
+            <div href="#" className="section-content">
+              <Slider {...this.props.settings}>
+                <div className="section-customize">
+                  <div className="img-bg section-handbook" />
+                  <span>co xuong khop</span>
+                </div>
+                <div className="section-customize">
+                  <div className="img-bg section-handbook" />
+                  <span>co xuong khop</span>
+                </div>
+                <div className="section-customize">
+                  <div className="img-bg section-handbook" />
+                  <span>co xuong khop</span>
+                </div>
+                <div className="section-customize">
+                  <div className="img-bg section-handbook" />
+                  <span>co xuong khop</span>
+                </div>
+                <div className="section-customize">
+                  <div className="img-bg section-handbook" />
+                  <span>co xuong khop</span>
+                </div>
+              </Slider>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.user.isLoggedIn,
+    language: state.app.language,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HandBook);

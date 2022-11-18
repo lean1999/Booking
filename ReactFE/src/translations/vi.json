@@ -1,0 +1,52 @@
+{
+    "home-header":{
+        "Speciality":"Chuyên Khoa",
+        "Search-doctor":"Tìm bác sĩ theo yêu cầu",
+        "Health-facility":"Cơ sở y tế",
+        "Select-room":"Chọn bệnh viện phòng khám ",
+        "Doctor":"Bác sĩ",
+        "Select-doctor":"Chọn bác sĩ giỏi",
+        "Fee":"Gói Khám",
+        "Check-health":"Khám sức khỏe tổng quát",
+        "Sp":"Hỗ Trợ",
+        "welcome" :"Xin chào, "
+        
+},
+    "banner":{
+    "t-one":"NỀN TẢNG Y TẾ",
+    "t-two":"Chăm Sóc Sức Khỏe Toàn Diện"
+},
+    "menu": {
+   
+        
+        "admin":{
+            "manage-user": "Administrator ",
+            "manage-doctor":"Quản Lý Bác Sĩ",
+            "manage-admin": "Quản Lý Quản Trị Viên",
+            "crud":"CRUD user",
+            "crud-redux":"CRUD Redux User",
+            "clinic" :"Phòng khám",
+            "manage-clinic" :"Quản lý phòng khám",
+            "specialty":"Chuyên khoa",
+            "manage-specialty":"Quản lý chuyên khoa",
+            "handbook":"Cẩm nang",
+            "manage-handbook":"Quản lý cẩm nang"
+        }
+},
+    "manage-user": {
+        "add" : "Thêm Mới Người Dùng",
+        "email": "Email",
+        "password": "Mật Khẩu",
+        "firstname": "Tên",
+        "lastname": "Họ",
+        "address": "Địa chỉ",
+        "phone":"Số Điện Thoại",
+        "gender": "Giới Tính",
+        "role": "Vai Trò",
+        "position":"Chức danh",
+        "image": "Image",
+        "save":"Lưu"
+
+}
+
+}

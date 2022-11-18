@@ -1,0 +1,61 @@
+{
+    "home-header": {
+        "Speciality":"medical specialty",
+        "Search-doctor":"Find a doctor on demand",
+        "Health-facility":"Health facilities",
+        "Select-room":"Choose hospital clinic",
+        "Doctor":"Doctor",
+        "Select-doctor":"Choose doctor",
+        "Fee":"Examination Package",
+        "Check-health":"General health check",
+        "Sp":"Support",
+        "welcome" :"Welcome, "
+    },
+    "banner": {
+        "t-one":"MEDICAL BACKGROUND",
+        "t-two":"Comprehensive Health Care"
+    },
+    "menu": {
+        "system": {
+            "header": "System",
+            "system-administrator": {
+                "header": "System Administrator",
+                "user-manage": "User manage",
+                "user-redux": "User Redux",
+                "register-package-group-or-account": "Register service package for group/account"
+            },
+            "system-parameter": {
+                "header": "System-parameter"
+            }
+        },
+        "admin":{
+            "manage-user": "User-system",
+            "manage-doctor":"Manage-doctor",
+            "manage-admin": "Manage-admin",
+            "crud":"CRUD user",
+            "crud-redux":"CRUD Redux User",
+            "clinic" :"Clinic",
+            "manage-clinic" :"Manage-clinic",
+            "specialty":"Speciality",
+            "manage-specialty":"Manage-specialty",
+            "handbook":"Handbook",
+            "manage-handbook":"Manage-handbook"
+        }
+        
+    },
+    "manage-user": {
+        "add" : "Add User",
+        "email": "Email",
+        "password": "Password",
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "address": "Address",
+        "phone":"phone-number",
+        "gender": "Gender",
+        "role": "Role",
+        "position":"Position",
+        "image": "Image",
+        "save":"Save"
+        
+}
+}

@@ -1,0 +1,381 @@
+.home-header-container{
+    height:60px;
+    width: 100%;
+    padding: 0 20px;
+    position: sticky;
+    background:white;
+    top: 0;
+    z-index: 10000;
+
+    .home-header-content{
+        width: 100%;
+        height: 100%;
+        display:flex;
+
+        .left-content{
+            width: 25%;
+            display: flex;
+            align-items: center;
+            .header-logo{
+                background: url('../../assets/images/bg-img/logo.png') center  no-repeat;
+                height:100% ;
+                background-size: contain;
+                width: 100%;
+                cursor: pointer;
+            }
+            i{
+                font-size: 25px;
+                color:gray;
+                cursor: pointer;
+            }
+            
+        }
+        .center-content{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+
+            .child-content{
+
+                .subs-title{
+                    font-weight: 400;
+                }
+            }
+        }
+        .right-content{
+            width: 25%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+
+        .support{
+            padding-right: 50px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            i{
+                font-size: 12px;
+                margin-right: 5px;
+                color: #49bce2;
+            }
+        }
+        .language-vi{
+            cursor: pointer;
+        
+
+            &.active{
+              span{
+                color: #f7d800;
+              }
+            }
+        }
+        .language-en{
+            cursor: pointer;
+            margin: 0 15px;
+            &.active{
+                span{
+                    color: #49bce2;
+                }
+            }
+        }
+        }
+    }
+
+}
+.home-header-banner{
+    background: url('../../assets/images/bg-img/img-backgroud.jpg');
+  
+    background-position:center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 730px; 
+    flex-direction: column;
+   
+    .content-up{
+        height: 50%;
+        display: grid;
+        .center{
+            margin: auto 0;
+            .title{
+                text-align: center;
+                font-size: 30px;
+                text-shadow: 1px 1px 1px #333;
+                color:white;
+                margin-bottom: 15px;
+
+            }
+
+            .search{
+                width: fit-content;
+                align-items: center;
+                margin: 0 auto;
+                padding: 10px;
+                border-radius: 25px;
+                background-color:#f7d800;
+                display:flex;
+                justify-content:center;
+        
+                i{
+                    margin: 0 5px;
+                }
+                input{
+                    height: 30px;
+                    width: 300px;
+                    border: none;
+                    outline: none;
+                    background-color:transparent;
+                }
+    
+
+        }
+           
+        }
+    }
+    .content-down{
+        background-image: linear-gradient(rgba(255, 255, 255, 0.01),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
+        height: 50%;
+        display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 10px;
+        .banner-options{
+            display: flex;
+            .option-child{
+                width: 150px;
+                height: 112px;
+                text-align: center;
+                cursor: pointer;
+                .one{
+                    background:url('../../assets/images/bg-img/hospital-icon.png');
+                   
+                }
+                .two{
+                    background:url('../../assets/images/bg-img/smart-phone-icon.png');
+                }
+                .three{
+                    background:url('../../assets/images/bg-img/office-icon.png');
+                }
+                .four{
+                    background:url('../../assets/images/bg-img/test.png');
+                }
+                .five{
+                    background:url('../../assets/images/bg-img/heath.png');
+
+                }
+                .six{
+                    background:url('../../assets/images/bg-img/nhakhoa.png');
+                }
+                .seven{
+                    background:url('../../assets/images/bg-img/xetnhiem.jpg');
+                }
+                .eight{
+                    background:url('../../assets/images/bg-img/car.png');
+                }
+                .nine{
+                    background:url('../../assets/images/bg-img/hea.jpg');
+                }
+                .icon-child{
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size:32px;
+                    background-color:white;
+                    width: 50px;
+                    height: 50px;
+                    border-radius:50%;
+                    text-align: center;
+                    margin: 0 auto;
+                
+                    i{
+                        color: #49bce2;
+                        font-size: 20px;
+                        line-height: 50px;
+                    }
+                }
+                .text-child{
+                    font-size: 16px;
+                    color:#333;
+                    font-weight:700;
+
+                    &:hover {
+                        color: #49bce2;
+                        
+                    }
+                }
+            }
+
+        }
+    }
+  
+}
+
+.section-share {
+   &.section-specialty{
+     background:#f5f5f5;
+
+   }
+   &.section-outstanding-doctor{
+    background:#f5f5f5;
+    height: 350px;
+   }
+   &.section-about{
+    background:#f5f5f5;
+    height: 500px;
+   }
+    .section-container{
+
+        .section-about-content{
+            display: flex;
+        
+
+            .content-left{
+                width: 60%;
+            }
+            .content-right{
+                width: 40%;
+                h3{
+                    margin-bottom: 15px;
+                }
+                ul{
+                    list-style: none;
+                    font-size:16px;
+                    font-style: italic;
+                    text-align: left;
+                   li:before{
+                    content: "-";
+                    position:absolute;
+                    margin-left: -1em;
+                   }
+                    li{
+                    margin: 10px 40px;  
+                    }
+                }
+            }
+
+        }
+    .section-content{
+        .section-customize{
+            &.border{
+                border: 1px solid #ccc;
+                padding: 8px 0;
+            }
+            width: 95% !important;
+            .img-bg{
+                padding-top:56.2%;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: #eee;
+                background-position: center center;
+
+                &.section-specialty{
+                    background-image:url('../../assets/images/specialty/co-xuong-khop.jpg');
+                }
+                &.section-medical-facility{
+                    background-image:url('../../assets/images/midical/110944-sunnycare.png');
+                }
+                &.section-outstanding-doctor{
+                    width: 160px;
+                    height: 120px;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    
+                    background-image:url('../../assets/images/outstanding-doctor/103848anh-dai-dien-bs.jpg');
+                }
+                &.section-handbook{
+                    background-image:url('../../assets/images/handbook/114442-anh-bia-nha-khoa-quan-binh-tan.jpg');
+                }
+            }
+            }
+
+        .section-outstanding-doctor{
+                .outer-bg{
+                    display: flex;
+                    justify-content:center;
+                }
+            }
+
+            span{
+                text-transform: capitalize;
+            }
+        }
+
+    }
+ }
+
+.section-share {
+    height:330px;
+
+    .section-container{
+        max-width: 1200px;
+        margin: 0 auto;
+
+        a{
+            color:#000;
+            text-decoration: none;
+        }
+
+        .section-header{
+
+           padding: 30px 0;
+
+           .title-section{
+            color: #000;
+            font-weight:600;
+            font-size:24px;
+           }
+           .btn-section{
+            content: "";
+            float:right;
+            border:none;
+            outline: none;
+            background-color:#fff;
+            padding:10px 15px;
+
+            &:hover{
+                background-color:yellow;
+            }
+           }
+        }
+        
+    }
+  
+}
+
+
+
+.slick-prev{
+    left: -10px !important;
+    z-index: 1000 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background-color: rgb(255, 255, 255) !important;
+    border:2px solid #d7d7d7 !important;
+
+    &:hover{
+        background-color: #dfd7d7 !important;
+    }
+}
+.slick-next{
+
+    right: -10px !important;
+    z-index: 1000 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background-color: #fff !important;
+}
+.slick-prev:before,
+.slick-next:before{
+    font-family: FontAwesome !important;
+    color :red !important;
+}
+.home-footer{
+text-align: center;
+padding: 10px 0;
+   a{
+    text-decoration: none;
+   }
+}
