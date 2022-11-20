@@ -47,15 +47,15 @@
         "add" : "Add User",
         "email": "Email",
         "password": "Password",
-        "firstname": "Firstname",
-        "lastname": "Lastname",
+        "firstName": "Firstname",
+        "lastName": "Lastname",
         "address": "Address",
         "phone":"phone-number",
         "gender": "Gender",
         "role": "Role",
         "position":"Position",
         "image": "Image",
-        "save":"Save"
+        "save":"Save User"
         
 }
 }

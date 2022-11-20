@@ -37,15 +37,15 @@
         "add" : "Thêm Mới Người Dùng",
         "email": "Email",
         "password": "Mật Khẩu",
-        "firstname": "Tên",
-        "lastname": "Họ",
+        "firstName": "Tên",
+        "lastName": "Họ",
         "address": "Địa chỉ",
         "phone":"Số Điện Thoại",
         "gender": "Giới Tính",
         "role": "Vai Trò",
         "position":"Chức danh",
         "image": "Image",
-        "save":"Lưu"
+        "save":"Lưu User"
 
 }
 
