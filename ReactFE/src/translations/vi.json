@@ -45,7 +45,8 @@
         "role": "Vai Trò",
         "position":"Chức danh",
         "image": "Image",
-        "save":"Lưu User"
+        "save":"Lưu User",
+        "edit": "Lưu Thay Đổi"
 
 }
 

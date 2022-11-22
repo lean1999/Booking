@@ -13,7 +13,6 @@ const adminReducer = (state = initialState, action) => {
     case actionTypes.FETCH_GENDER_START:
       let copyState = { ...state };
       copyState.isLoadingGender = true;
-      console.log("fetch", action);
       return {
         ...copyState,
       };
@@ -52,14 +51,12 @@ const adminReducer = (state = initialState, action) => {
 
     case actionTypes.FETCH_ALL_USER_SUCCESS:
       state.users = action.users;
-      console.log("fetch success", state.users);
       return {
         ...state,
       };
 
     case actionTypes.FETCH_ALL_USER_FAILED:
       state.users = [];
-      console.log("fetch fail", action);
       return {
         ...state,
       };

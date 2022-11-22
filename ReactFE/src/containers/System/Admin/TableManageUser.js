@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import "./TableManageUser.scss";
 import * as actions from "../../../store/actions";
@@ -12,10 +12,22 @@ class TableManageUser extends Component {
   }
   componentDidMount() {
     this.props.fetchUserRedux();
-
-    console.log("check props 133", this.props.listUser);
   }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.listUser !== this.props.listUser) {
+      this.setState({
+        usersRedux: this.props.listUser,
+      });
+    }
+  }
+  handleDelete = (user) => {
+    this.props.DeleteUsers(user.id);
+  };
+  handleEditUser = (user) => {
+    this.props.handleEditUserFromParent(user);
+  };
   render() {
+    let arrUsers = this.state.usersRedux;
     return (
       <table id="TableManageUser">
         <tbody>
@@ -27,31 +39,8 @@ class TableManageUser extends Component {
             <th>SDT</th>
             <th>Action</th>
           </tr>
-
-          <tr>
-            <td>{"item.email"}</td>
-            <td>{"item.firstName"}</td>
-            <td>{"item.lastName"}</td>
-            <td>{"item.address"}</td>
-            <td>{"item.phoneNumber"}</td>
-            <td>
-              <button
-                className="btn-edit"
-                type="button"
-                onClick={() => this.handleEditUser()}
-              >
-                <i className="fas fa-pencil-alt"></i>
-              </button>
-              <button
-                className="btn-delete"
-                onClick={() => this.handleDeleteUser()}
-              >
-                <i className="fas fa-trash"></i>
-              </button>
-            </td>
-          </tr>
-
-          {/* {arrUsers &&
+          {arrUsers &&
+            arrUsers.length > 0 &&
             arrUsers.map((item, index) => {
               return (
                 <tr key={index}>
@@ -63,21 +52,20 @@ class TableManageUser extends Component {
                   <td>
                     <button
                       className="btn-edit"
-                      type="button"
                       onClick={() => this.handleEditUser(item)}
                     >
                       <i className="fas fa-pencil-alt"></i>
                     </button>
                     <button
                       className="btn-delete"
-                      onClick={() => this.handleDeleteUser(item)}
+                      onClick={() => this.handleDelete(item)}
                     >
                       <i className="fas fa-trash"></i>
                     </button>
                   </td>
                 </tr>
               );
-            })} */}
+            })}
         </tbody>
       </table>
     );
@@ -93,6 +81,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUserRedux: () => dispatch(actions.fetchAllUsersStart()),
+    DeleteUsers: (id) => dispatch(actions.DeleteUsersStart(id)),
   };
 };
 
