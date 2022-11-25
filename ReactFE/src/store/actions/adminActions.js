@@ -5,12 +5,60 @@ import {
   getAllUsers,
   editUserService,
   deleteUserService,
+  getTopDoctorHomeService,
+  getAllDoctors,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 
 // export const fetchGenderStart = () => ({
 //   type: actionTypes.FETCH_GENDER_START,
 // });
+export const fetchTopDoctor = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getTopDoctorHomeService("");
+      if (res && res.errCode === 0) {
+        dispatch({
+          type: actionTypes.FETCH_TOP_DOCTOR_SUCCESS,
+          dataDoctor: res.data,
+        });
+      } else {
+        dispatch({ type: actionTypes.FETCH_TOP_DOCTOR_FAILED });
+      }
+    } catch (e) {
+      console.log("fetchTopDoctorFailed", e);
+      dispatch({ type: actionTypes.FETCH_TOP_DOCTOR_FAILED });
+    }
+  };
+};
+
+export const fetchTopDoctorSuccess = () => ({
+  type: actionTypes.FETCH_TOP_DOCTOR_SUCCESS,
+});
+export const fetchTopDoctorFailed = () => ({
+  type: actionTypes.FETCH_TOP_DOCTOR_FAILED,
+});
+
+export const fetchAllDoctors = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllDoctors();
+      console.log("check res", res);
+      if (res && res.err === 0) {
+        dispatch({
+          type: actionTypes.FETCH_ALL_DOCTOR_SUCCESS,
+          dataDoctors: res.data,
+        });
+      } else {
+        dispatch({ type: actionTypes.FETCH_ALL_DOCTOR_FAILED });
+      }
+    } catch (e) {
+      console.log("fetchALLDoctorFailed", e);
+      dispatch({ type: actionTypes.FETCH_ALL_DOCTOR_FAILED });
+    }
+  };
+};
+
 export const fetchGenderStart = () => {
   return async (dispatch, getState) => {
     try {
@@ -53,7 +101,6 @@ export const fetchPositionStart = () => {
   return async (dispatch, getState) => {
     try {
       let res = await getAllCodeService("POSITION");
-      console.log(res);
       if (res && res.errCode === 0) {
         dispatch(fetchPositionSuccess(res.data));
       } else {
@@ -162,6 +209,7 @@ export const editAUser = (data) => {
   return async (dispatch, getState) => {
     try {
       let res = await editUserService(data);
+
       if (res && res.err === 0) {
         dispatch(editUsersSuccess());
         dispatch(fetchAllUsersStart());

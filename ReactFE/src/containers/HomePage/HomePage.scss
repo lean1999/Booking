@@ -278,25 +278,26 @@
                     background-image:url('../../assets/images/midical/110944-sunnycare.png');
                 }
                 &.section-outstanding-doctor{
-                    width: 160px;
-                    height: 120px;
+                   width: 160px;
+                   height: 120px;
                     margin: 0 auto;
                     border-radius: 50%;
                     
-                    background-image:url('../../assets/images/outstanding-doctor/103848anh-dai-dien-bs.jpg');
+                    // background-image:url('../../assets/images/outstanding-doctor/103848anh-dai-dien-bs.jpg');
                 }
                 &.section-handbook{
                     background-image:url('../../assets/images/handbook/114442-anh-bia-nha-khoa-quan-binh-tan.jpg');
                 }
+                
+            }
+            .position{
+                h5{
+                    padding: 10px;
+                }
             }
             }
 
-        .section-outstanding-doctor{
-                .outer-bg{
-                    display: flex;
-                    justify-content:center;
-                }
-            }
+           
 
             span{
                 text-transform: capitalize;
@@ -366,6 +367,9 @@
     height: 48px !important;
     width: 44px !important;
     background-color: #fff !important;
+}
+.slick-disabled{
+    display: none !important;
 }
 .slick-prev:before,
 .slick-next:before{

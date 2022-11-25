@@ -37,6 +37,14 @@ class MedicalFacility extends Component {
                 <div className="img-bg section-medical-facility" />
                 <span>Viện Tư vấn Tâm lý SunnyCare</span>
               </div>
+              <div className="section-customize">
+                <div className="img-bg section-medical-facility" />
+                <span>Viện Tư vấn Tâm lý SunnyCare</span>
+              </div>
+              <div className="section-customize">
+                <div className="img-bg section-medical-facility" />
+                <span>Viện Tư vấn Tâm lý SunnyCare</span>
+              </div>
             </Slider>
           </div>
         </div>

@@ -71,7 +71,6 @@ class UserManage extends Component {
     try {
       let res = await deleteUserService(user.id);
       if (res && res.err === 0) {
-        alert("Delete success");
         await this.getAllUsersFromReact();
       } else {
         alert(res.err);

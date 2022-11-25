@@ -48,6 +48,10 @@
         "save":"Lưu User",
         "edit": "Lưu Thay Đổi"
 
+},
+"home-pages": {
+    "out-standing-doctor":"Bác sĩ nổi bật tuần qua",
+    "more-infor":"Xem thêm"
 }
 
 }
