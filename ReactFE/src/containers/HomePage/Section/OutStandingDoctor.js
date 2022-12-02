@@ -4,6 +4,7 @@ import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
+import { withRouter } from "react-router";
 class OutStandingDoctor extends Component {
   constructor(props) {
     super(props);
@@ -21,11 +22,14 @@ class OutStandingDoctor extends Component {
   componentDidMount() {
     this.props.loadTopDoctors();
   }
+  handleViewDetailDoctor = (doctor) => {
+    if (this.props.history) {
+      this.props.history.push(`/detail-doctor/${doctor.id}`);
+    }
+  };
   render() {
-    let arrDoctorsa = this.state.arrDoctors;
+    let arrDoctors = this.state.arrDoctors;
     let { language } = this.props;
-    console.log("check props", this.props);
-    console.log("check state arr doctor", arrDoctorsa);
     return (
       <div className="section-share section-outstanding-doctor">
         <div className="section-container">
@@ -37,12 +41,9 @@ class OutStandingDoctor extends Component {
           </div>
           <div href="#" className="section-content">
             <Slider {...this.props.settings}>
-              {arrDoctorsa &&
-                arrDoctorsa.length >= 0 &&
-                arrDoctorsa.map((item, index) => {
-                  console.log("check item 2", item);
-                  console.log("check item 1", item.id);
-                  console.log("check item", item.positionData);
+              {arrDoctors &&
+                arrDoctors.length >= 0 &&
+                arrDoctors.map((item, index) => {
                   let imageBase64 = "";
                   if (item.image) {
                     imageBase64 = new Buffer(item.image, "base64").toString(
@@ -50,14 +51,15 @@ class OutStandingDoctor extends Component {
                     );
                   }
 
-                  {
-                    {
-                      /* let nameVi = `${item.positionData.valueVi},  ${item.firstName} ${item.lastName} `;
-                    let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`; */
-                    }
-                  }
+                  let nameVi = `${item.positionData.valueVi},  ${item.firstName} ${item.lastName} `;
+                  let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
+
                   return (
-                    <div className="section-customize border" key={index}>
+                    <div
+                      className="section-customize border"
+                      key={index}
+                      onClick={() => this.handleViewDetailDoctor(item)}
+                    >
                       <div>
                         <div
                           className="img-bg section-outstanding-doctor "
@@ -67,7 +69,7 @@ class OutStandingDoctor extends Component {
                         />
                       </div>
                       <div className="position text-center">
-                        {/* {<h5>{language === LANGUAGES.VI ? nameVi : nameEn}</h5>} */}
+                        {<h5>{language === LANGUAGES.VI ? nameVi : nameEn}</h5>}
                         <span>Giao su , Tien sy </span>
                       </div>
                     </div>
@@ -95,4 +97,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor)
+);

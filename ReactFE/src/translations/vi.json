@@ -17,10 +17,8 @@
     "t-two":"Chăm Sóc Sức Khỏe Toàn Diện"
 },
     "menu": {
-   
-        
         "admin":{
-            "manage-user": "Administrator ",
+            "manage-user": "Người dùng",
             "manage-doctor":"Quản Lý Bác Sĩ",
             "manage-admin": "Quản Lý Quản Trị Viên",
             "crud":"CRUD user",
@@ -31,7 +29,11 @@
             "manage-specialty":"Quản lý chuyên khoa",
             "handbook":"Cẩm nang",
             "manage-handbook":"Quản lý cẩm nang"
+        },
+        "doctor":{
+            "manage-schedule":"Quan ly ke hoach kham benh "
         }
+        
 },
     "manage-user": {
         "add" : "Thêm Mới Người Dùng",
@@ -52,6 +54,13 @@
 "home-pages": {
     "out-standing-doctor":"Bác sĩ nổi bật tuần qua",
     "more-infor":"Xem thêm"
+},
+"manage-schedule":
+{
+    "title":"Quản lý kế hoạch khám bệnh",
+    "chooseDoctor":"Chọn Bác Sĩ",
+    "chooseDate":"Chọn Ngày",
+    "save":"Lưu Thông Tin"
 }
 
 }

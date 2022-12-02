@@ -40,6 +40,9 @@
             "manage-specialty":"Manage-specialty",
             "handbook":"Handbook",
             "manage-handbook":"Manage-handbook"
+        },
+        "doctor":{
+            "manage-schedule":" Manage Doctor's schedule"
         }
         
     },
@@ -63,5 +66,13 @@
 "home-pages": {
     "out-standing-doctor":"Bác sĩ nổi bật tuần qua",
     "more-infor":"Xem thêm"
+},
+"manage-schedule":
+{
+    "title":"Manage medical examination plan",
+    "chooseDoctor":"Choose Doctor",
+    "chooseDate":"Choose Day",
+    "save":"Save Info"
 }
+
 }

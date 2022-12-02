@@ -7,12 +7,55 @@ import {
   deleteUserService,
   getTopDoctorHomeService,
   getAllDoctors,
+  saveDetailDoctorService,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 
 // export const fetchGenderStart = () => ({
 //   type: actionTypes.FETCH_GENDER_START,
 // });
+
+export const fetchAllScheduleTime = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllCodeService("TIME");
+      if (res && res.errCode === 0) {
+        dispatch({
+          type: actionTypes.SAVE_ALL_SCHEDULE_TIME_SUCCESS,
+          dataTime: res.data,
+        });
+      } else {
+        dispatch({ type: actionTypes.SAVE_ALL_SCHEDULE_TIME_FAILED });
+        console.log("SAVE_ALL_SCHEDULE_TIME_FAILED");
+      }
+    } catch (e) {
+      console.log("SAVE_ALL_SCHEDULE_TIME_FAILED", e);
+      dispatch({ type: actionTypes.SAVE_ALL_SCHEDULE_TIME_FAILED });
+    }
+  };
+};
+
+export const saveDetailDoctor = (data) => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await saveDetailDoctorService(data);
+      if (res && res.errCode === 0) {
+        dispatch({
+          type: actionTypes.SAVE_DETAIL_DOCTOR_SUCCESS,
+        });
+        toast.success("Save Info Doctor Success");
+      } else {
+        dispatch({ type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED });
+        toast.error("SAVE_ALL_SCHEDULE_TIME__FAILED");
+      }
+    } catch (e) {
+      console.log("fetchTopDoctorFailed", e);
+      dispatch({ type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED });
+      toast.error("SAVE_ALL_SCHEDULE_TIME__FAILED");
+    }
+  };
+};
+
 export const fetchTopDoctor = () => {
   return async (dispatch, getState) => {
     try {
@@ -43,7 +86,6 @@ export const fetchAllDoctors = () => {
   return async (dispatch, getState) => {
     try {
       let res = await getAllDoctors();
-      console.log("check res", res);
       if (res && res.err === 0) {
         dispatch({
           type: actionTypes.FETCH_ALL_DOCTOR_SUCCESS,

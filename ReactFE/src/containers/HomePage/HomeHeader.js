@@ -5,6 +5,7 @@ import "./HomeHeader.scss";
 import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils/constant";
 import { changeLanguageApp } from "../../store/actions";
+import { withRouter } from "react-router";
 class HomeHeader extends Component {
   ChangeLanguages = (language) => {
     this.props.changeLanguageAppRedux(language);
@@ -19,7 +20,12 @@ class HomeHeader extends Component {
           <div className="home-header-content">
             <div className="left-content">
               <i className="fas fa-bars"></i>
-              <div className="header-logo"></div>
+
+              <div className="header-logo">
+                <a href="/home" className="">
+                  {" "}
+                </a>
+              </div>
             </div>
             <div className="center-content">
               <div className="child-content">
@@ -102,87 +108,89 @@ class HomeHeader extends Component {
             </div>
           </div>
         </div>
-        <div className="home-header-banner">
-          <div className="content-up">
-            <div className="center">
-              <div className="title">
-                <h3>
-                  <FormattedMessage id="banner.t-one" />
-                </h3>
-              </div>
-              <div className="title">
-                <h1>
-                  {" "}
-                  <FormattedMessage id="banner.t-two" />
-                </h1>
-              </div>
-              <div className="search">
-                <i className="fa fa-search"></i>
-                <input type="text" placeholder="Tìm Bác Sĩ" />
-              </div>
-            </div>
-          </div>
-          <div className="content-down">
-            <div className="banner-options">
-              <div className="option-child">
-                <div className="icon-child one"></div>
-                <div className="text-child">
-                  {" "}
-                  Khám
-                  <br /> Chuyên Khoa
+        {this.props.isShowBanner === true && (
+          <div className="home-header-banner">
+            <div className="content-up">
+              <div className="center">
+                <div className="title">
+                  <h3>
+                    <FormattedMessage id="banner.t-one" />
+                  </h3>
                 </div>
-              </div>
-              <div className="option-child">
-                <div className="icon-child two"></div>
-                <div className="text-child">
-                  Khám <br /> từ xa
+                <div className="title">
+                  <h1>
+                    {" "}
+                    <FormattedMessage id="banner.t-two" />
+                  </h1>
                 </div>
-              </div>
-              <div className="option-child">
-                <div className="icon-child three"></div>
-                <div className="text-child">
-                  Khám <br /> tổng quát
-                </div>
-              </div>
-              <div className="option-child">
-                <div className="icon-child four"></div>
-                <div className="text-child">
-                  Xét nhiệm <br /> y học
-                </div>
-              </div>
-              <div className="option-child">
-                <div className="icon-child five"></div>
-                <div className="text-child">
-                  Sức Khỏe <br /> Tinh Thần
-                </div>
-              </div>
-              <div className="option-child">
-                <div className="icon-child six"></div>
-                <div className="text-child">
-                  Khám <br /> Nha Khoa
-                </div>
-              </div>
-              <div className="option-child">
-                <div className="icon-child six"></div>
-                <div className="text-child">
-                  Gói <br /> Phẩu Thuật
-                </div>
-              </div>
-              <div className="option-child">
-                <div className="icon-child six"></div>
-                <div className="text-child">
-                  Sản Phẩm <br /> Y Tế
-                </div>
-              </div>{" "}
-              <div className="option-child">
-                <div className="icon-child six"></div>
-                <div className="text-child">
-                  Sức Khỏe <br /> Doanh Nghiệp
+                <div className="search">
+                  <i className="fa fa-search"></i>
+                  <input type="text" placeholder="Tìm Bác Sĩ" />
                 </div>
               </div>
             </div>
+            <div className="content-down">
+              <div className="banner-options">
+                <div className="option-child">
+                  <div className="icon-child one"></div>
+                  <div className="text-child">
+                    {" "}
+                    Khám
+                    <br /> Chuyên Khoa
+                  </div>
+                </div>
+                <div className="option-child">
+                  <div className="icon-child two"></div>
+                  <div className="text-child">
+                    Khám <br /> từ xa
+                  </div>
+                </div>
+                <div className="option-child">
+                  <div className="icon-child three"></div>
+                  <div className="text-child">
+                    Khám <br /> tổng quát
+                  </div>
+                </div>
+                <div className="option-child">
+                  <div className="icon-child four"></div>
+                  <div className="text-child">
+                    Xét nhiệm <br /> y học
+                  </div>
+                </div>
+                <div className="option-child">
+                  <div className="icon-child five"></div>
+                  <div className="text-child">
+                    Sức Khỏe <br /> Tinh Thần
+                  </div>
+                </div>
+                <div className="option-child">
+                  <div className="icon-child six"></div>
+                  <div className="text-child">
+                    Khám <br /> Nha Khoa
+                  </div>
+                </div>
+                <div className="option-child">
+                  <div className="icon-child six"></div>
+                  <div className="text-child">
+                    Gói <br /> Phẩu Thuật
+                  </div>
+                </div>
+                <div className="option-child">
+                  <div className="icon-child six"></div>
+                  <div className="text-child">
+                    Sản Phẩm <br /> Y Tế
+                  </div>
+                </div>{" "}
+                <div className="option-child">
+                  <div className="icon-child six"></div>
+                  <div className="text-child">
+                    Sức Khỏe <br /> Doanh Nghiệp
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </>
     );
   }
@@ -202,4 +210,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(HomeHeader)
+);
