@@ -1,0 +1,37 @@
+.doctor-extra-info-container {
+    padding-left: 15px;
+
+    .content-up {
+        margin-bottom: 10px;
+
+        .text-address {
+            text-transform: uppercase;
+            color: red;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 20px;
+        }
+
+        .name-clinic {
+            padding: 5px 0;
+            font-weight: 600;
+        }
+
+        .detail-address {
+            font-weight: 600;
+        }
+    }
+
+    .content-down {
+        .show-detail {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .hide-detail {
+            margin-top: 20px;
+            color: blue;
+            cursor: pointer;
+        }
+    }
+}
