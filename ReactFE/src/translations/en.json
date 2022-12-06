@@ -1,6 +1,6 @@
 {
     "home-header": {
-        "Speciality":"medical specialty",
+        "Speciality":"Medical specialty",
         "Search-doctor":"Find a doctor on demand",
         "Health-facility":"Health facilities",
         "Select-room":"Choose hospital clinic",
@@ -73,6 +73,30 @@
     "chooseDoctor":"Choose Doctor",
     "chooseDate":"Choose Day",
     "save":"Save Info"
-}
+},
+"patient": {
+    "detail-doctor":{
+        "schedule":"Schedule",
+        "no-schedule":" The doctor does not schedule this time, Please choose another time!",
+        "choose":"Choose  ", 
+        "free":" and books (Free)"
+    }
+},
+"admin":{
+    "manage-doctor":{
+        "title":"Create more doctor information",
+        "select-doctor":"Choose Doctor ",
+        "info-doctor":"About Information",
+        "biography-doctor":"Doctor Biography",
+        "save-info":" Save-Info ",
+        "create-info":" Create-Info",
+        "price":"Price :",
+        "payment":"Payment :",
+        "province":"Province :",
+        "nameClinic":"Clinic's Name:",
+        "addressClinic":"Clinic's Address:",
+        "note":"Note :"
 
+    }
+}
 }

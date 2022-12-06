@@ -61,6 +61,33 @@
     "chooseDoctor":"Chọn Bác Sĩ",
     "chooseDate":"Chọn Ngày",
     "save":"Lưu Thông Tin"
+},
+"patient": {
+    "detail-doctor":{
+        "schedule":"Lịch Khám",
+        "no-schedule":" Bác sĩ không lịch hẹn thời gian này , Vui lòng chọn thời gian khác!",
+        "choose":"Chọn ",
+        "free":" và đặt (Phí đặt lịch 0đ)"
+    }
+},
+"admin":{
+    "manage-doctor":{
+        "title":"Tạo Thêm Thông Tin Bác Sĩ",
+        "select-doctor":"Chọn Bác Sĩ",
+        "info-doctor":"Thông Tin Giới Thiệu",
+        "biography-doctor":"Tiểu Sử Bác Sĩ",
+        "save-info":" Lưu Thông Tin ",
+        "create-info":"Tạo Thông Tin",
+        "price":"Giá khám bệnh :",
+        "payment":"Phương thức thanh toán :",
+        "province":"Chọn tỉnh thành :",
+        "nameClinic":"Tên phòng khám :",
+        "addressClinic":"Địa chỉ phòng:",
+        "note":"Ghi chú :"
+        
+        
+    }
 }
+
 
 }

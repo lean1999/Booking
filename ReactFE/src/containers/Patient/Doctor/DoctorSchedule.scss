@@ -1,5 +1,6 @@
 .doctor-schedule-container{
     height:100%;
+    border-right:1px solid #ddd;
     .all-schedule{
         select{
             padding:5px 10px;
@@ -25,12 +26,14 @@
             font-weight: 600;
         }
         .time-content{
-            display:flex;
-            gap: 15px;
-            flex-wrap: wrap;
+           
             
-            
-            button{
+            .time-content-btn{
+                display:flex;
+                gap: 15px;
+                flex-wrap: wrap;
+         
+               button{
                 padding: 8px 25px;
                 min-width: 180px;
                 border:none;
@@ -43,7 +46,10 @@
                     background-color:#45c3d2
                 }
             }
-
+        }
+        .book-free{
+            margin-top: 10px;
+        }
         }
     }
 }
