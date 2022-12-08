@@ -1,367 +1,410 @@
-.home-header-container{
-    height:60px;
+.home-header-container {
+    height: 60px;
     width: 100%;
     padding: 0 20px;
     position: sticky;
-    background:white;
+    background: white;
     top: 0;
-    z-index: 10000;
+    z-index: 100;
 
-    .home-header-content{
+    .home-header-content {
         width: 100%;
         height: 100%;
-        display:flex;
+        display: flex;
 
-        .left-content{
+        .left-content {
             width: 25%;
             display: flex;
             align-items: center;
-            .header-logo{
-                background: url('../../assets/images/bg-img/logo.png') center  no-repeat;
-                height:100% ;
+
+            .header-logo {
+                background: url('../../assets/images/bg-img/logo.png') center no-repeat;
+                height: 100%;
                 background-size: contain;
                 width: 100%;
                 cursor: pointer;
             }
-            i{
+
+            i {
                 font-size: 25px;
-                color:gray;
+                color: gray;
                 cursor: pointer;
             }
-            
+
         }
-        .center-content{
+
+        .center-content {
             width: 50%;
             height: 100%;
             display: flex;
-            align-items:center;
+            align-items: center;
             justify-content: space-between;
 
-            .child-content{
+            .child-content {
 
-                .subs-title{
+                .subs-title {
                     font-weight: 400;
                 }
             }
         }
-        .right-content{
+
+        .right-content {
             width: 25%;
-            display:flex;
+            display: flex;
             align-items: center;
             justify-content: center;
 
-        .support{
-            padding-right: 50px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            i{
-                font-size: 12px;
-                margin-right: 5px;
-                color: #49bce2;
-            }
-        }
-        .language-vi{
-            cursor: pointer;
-        
+            .support {
+                padding-right: 50px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
 
-            &.active{
-              span{
-                color: #f7d800;
-              }
-            }
-        }
-        .language-en{
-            cursor: pointer;
-            margin: 0 15px;
-            &.active{
-                span{
+                i {
+                    font-size: 12px;
+                    margin-right: 5px;
                     color: #49bce2;
                 }
             }
-        }
+
+            .language-vi {
+                cursor: pointer;
+
+
+                &.active {
+                    span {
+                        color: #f7d800;
+                    }
+                }
+            }
+
+            .language-en {
+                cursor: pointer;
+                margin: 0 15px;
+
+                &.active {
+                    span {
+                        color: #49bce2;
+                    }
+                }
+            }
         }
     }
 
 }
-.home-header-banner{
+
+.home-header-banner {
     background: url('../../assets/images/bg-img/doctor_PNG16032.webp');
-  
-    background-position:center;
-    background-size:cover;
+
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 880px; 
+    height: 880px;
     flex-direction: column;
-   
-    .content-up{
+
+    .content-up {
         height: 50%;
         display: grid;
-        .center{
+
+        .center {
             margin: auto 0;
-            .title{
+
+            .title {
                 text-align: center;
                 font-size: 30px;
                 text-shadow: 1px 1px 1px #333;
-                color:white;
+                color: white;
                 margin-bottom: 15px;
 
             }
 
-            .search{
+            .search {
                 width: fit-content;
                 align-items: center;
                 margin: 0 auto;
                 padding: 10px;
                 border-radius: 25px;
-                background-color:#f7d800;
-                display:flex;
-                justify-content:center;
-        
-                i{
+                background-color: #f7d800;
+                display: flex;
+                justify-content: center;
+
+                i {
                     margin: 0 5px;
                 }
-                input{
+
+                input {
                     height: 30px;
                     width: 300px;
                     border: none;
                     outline: none;
-                    background-color:transparent;
+                    background-color: transparent;
                 }
-    
+
+
+            }
 
         }
-           
-        }
     }
-    .content-down{
-        background-image: linear-gradient(rgba(255, 255, 255, 0.01),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
+
+    .content-down {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
         height: 50%;
         display: flex;
-            gap: 30px;
-            justify-content: center;
-            align-items: flex-end;
-            padding-bottom: 10px;
-        .banner-options{
+        gap: 30px;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 10px;
+
+        .banner-options {
             display: flex;
-            .option-child{
+
+            .option-child {
                 width: 150px;
                 height: 112px;
                 text-align: center;
                 cursor: pointer;
-                .one{
-                    background:url('../../assets/images/bg-img/hospital-icon.png');
-                   
-                }
-                .two{
-                    background:url('../../assets/images/bg-img/smart-phone-icon.png');
-                }
-                .three{
-                    background:url('../../assets/images/bg-img/office-icon.png');
-                }
-                .four{
-                    background:url('../../assets/images/bg-img/test.png');
-                }
-                .five{
-                    background:url('../../assets/images/bg-img/heath.png');
+
+                .one {
+                    background: url('../../assets/images/bg-img/hospital-icon.png');
 
                 }
-                .six{
-                    background:url('../../assets/images/bg-img/nhakhoa.png');
+
+                .two {
+                    background: url('../../assets/images/bg-img/smart-phone-icon.png');
                 }
-                .seven{
-                    background:url('../../assets/images/bg-img/xetnhiem.jpg');
+
+                .three {
+                    background: url('../../assets/images/bg-img/office-icon.png');
                 }
-                .eight{
-                    background:url('../../assets/images/bg-img/car.png');
+
+                .four {
+                    background: url('../../assets/images/bg-img/test.png');
                 }
-                .nine{
-                    background:url('../../assets/images/bg-img/hea.jpg');
+
+                .five {
+                    background: url('../../assets/images/bg-img/heath.png');
+
                 }
-                .icon-child{
+
+                .six {
+                    background: url('../../assets/images/bg-img/nhakhoa.png');
+                }
+
+                .seven {
+                    background: url('../../assets/images/bg-img/xetnhiem.jpg');
+                }
+
+                .eight {
+                    background: url('../../assets/images/bg-img/car.png');
+                }
+
+                .nine {
+                    background: url('../../assets/images/bg-img/hea.jpg');
+                }
+
+                .icon-child {
                     background-position: center;
                     background-repeat: no-repeat;
-                    background-size:32px;
-                    background-color:white;
+                    background-size: 32px;
+                    background-color: white;
                     width: 50px;
                     height: 50px;
-                    border-radius:50%;
+                    border-radius: 50%;
                     text-align: center;
                     margin: 0 auto;
-                
-                    i{
+
+                    i {
                         color: #49bce2;
                         font-size: 20px;
                         line-height: 50px;
                     }
                 }
-                .text-child{
+
+                .text-child {
                     font-size: 16px;
-                    color:#333;
-                    font-weight:700;
+                    color: #333;
+                    font-weight: 700;
 
                     &:hover {
                         color: #49bce2;
-                        
+
                     }
                 }
             }
 
         }
     }
-  
+
 }
 
 .section-share {
-   &.section-specialty{
-     background:#f5f5f5;
+    &.section-specialty {
+        background: #f5f5f5;
 
-   }
-   &.section-outstanding-doctor{
-    background:#f5f5f5;
-    height: 400px;
-   }
-   &.section-about{
-    background:#f5f5f5;
-    height: 500px;
-   }
-    .section-container{
+    }
 
-        .section-about-content{
+    &.section-outstanding-doctor {
+        background: #f5f5f5;
+        height: 400px;
+    }
+
+    &.section-about {
+        background: #f5f5f5;
+        height: 500px;
+    }
+
+    .section-container {
+
+        .section-about-content {
             display: flex;
-        
 
-            .content-left{
+
+            .content-left {
                 width: 60%;
             }
-            .content-right{
+
+            .content-right {
                 width: 40%;
-                h3{
+
+                h3 {
                     margin-bottom: 15px;
                 }
-                ul{
+
+                ul {
                     list-style: none;
-                    font-size:16px;
+                    font-size: 16px;
                     font-style: italic;
                     text-align: left;
-                   li:before{
-                    content: "-";
-                    position:absolute;
-                    margin-left: -1em;
-                   }
-                    li{
-                    margin: 10px 40px;  
+
+                    li:before {
+                        content: "-";
+                        position: absolute;
+                        margin-left: -1em;
+                    }
+
+                    li {
+                        margin: 10px 40px;
                     }
                 }
             }
 
         }
-    .section-content{
-        .section-customize{
-            &.border{
-                border: 1px solid #ccc;
-                padding: 8px 0;
-                height: 280px;
-            }
-            width: 95% !important;
-            .img-bg{
-                padding-top:56.2%;
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-color: #eee;
-                background-position: center center;
 
-                &.section-specialty{
-                    background-image:url('../../assets/images/bg-img/doctor_PNG16032.webp');
+        .section-content {
+            .section-customize {
+                &.border {
+                    border: 1px solid #ccc;
+                    padding: 8px 0;
+                    height: 280px;
                 }
-                &.section-medical-facility{
-                    background-image:url('../../assets/images/bg-img/doctor_PNG16032.webp');
+
+                width: 95% !important;
+
+                .img-bg {
+                    padding-top: 56.2%;
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-color: #eee;
+                    background-position: center center;
+
+                    &.section-specialty {
+                        background-image: url('../../assets/images/bg-img/doctor_PNG16032.webp');
+                    }
+
+                    &.section-medical-facility {
+                        background-image: url('../../assets/images/bg-img/doctor_PNG16032.webp');
+                    }
+
+                    &.section-outstanding-doctor {
+                        width: 160px;
+                        height: 120px;
+                        margin: 0 auto;
+                        border-radius: 50%;
+
+                        // background-image:url('../../assets/images/outstanding-doctor/103848anh-dai-dien-bs.jpg');
+                    }
+
+                    &.section-handbook {
+                        background-image: url('../../assets/images/bg-img/doctor_PNG16032.webp');
+                    }
+
                 }
-                &.section-outstanding-doctor{
-                   width: 160px;
-                   height: 120px;
-                    margin: 0 auto;
-                    border-radius: 50%;
-                    
-                    // background-image:url('../../assets/images/outstanding-doctor/103848anh-dai-dien-bs.jpg');
+
+                .position {
+                    h5 {
+                        padding: 10px;
+                    }
                 }
-                &.section-handbook{
-                    background-image:url('../../assets/images/bg-img/doctor_PNG16032.webp');
-                }
-                
-            }
-            .position{
-                h5{
-                    padding: 10px;
-                }
-            }
             }
 
-           
 
-            span{
+
+            span {
                 text-transform: capitalize;
             }
         }
 
     }
- }
+}
 
 .section-share {
-    height:330px;
+    height: 330px;
 
-    .section-container{
+    .section-container {
         max-width: 1200px;
         margin: 0 auto;
 
-        a{
-            color:#000;
+        a {
+            color: #000;
             text-decoration: none;
         }
 
-        .section-header{
+        .section-header {
 
-           padding: 30px 0;
+            padding: 30px 0;
 
-           .title-section{
-            color: #000;
-            font-weight:600;
-            font-size:24px;
-           }
-           .btn-section{
-            content: "";
-            float:right;
-            border:none;
-            outline: none;
-            background-color:#fff;
-            padding:10px 15px;
-
-            &:hover{
-                background-color:yellow;
+            .title-section {
+                color: #000;
+                font-weight: 600;
+                font-size: 24px;
             }
-           }
+
+            .btn-section {
+                content: "";
+                float: right;
+                border: none;
+                outline: none;
+                background-color: #fff;
+                padding: 10px 15px;
+
+                &:hover {
+                    background-color: yellow;
+                }
+            }
         }
-        
+
     }
-  
+
 }
 
 
 
-.slick-prev{
+.slick-prev {
     left: -10px !important;
     z-index: 1000 !important;
     height: 48px !important;
     width: 44px !important;
     background-color: rgb(255, 255, 255) !important;
-    border:2px solid #d7d7d7 !important;
+    border: 2px solid #d7d7d7 !important;
 
-    &:hover{
+    &:hover {
         background-color: #dfd7d7 !important;
     }
 }
-.slick-next{
+
+.slick-next {
 
     right: -10px !important;
     z-index: 1000 !important;
@@ -369,18 +412,22 @@
     width: 44px !important;
     background-color: #fff !important;
 }
-.slick-disabled{
+
+.slick-disabled {
     display: none !important;
 }
+
 .slick-prev:before,
-.slick-next:before{
+.slick-next:before {
     font-family: FontAwesome !important;
-    color :red !important;
+    color: red !important;
 }
-.home-footer{
-text-align: center;
-padding: 10px 0;
-   a{
-    text-decoration: none;
-   }
+
+.home-footer {
+    text-align: center;
+    padding: 10px 0;
+
+    a {
+        text-decoration: none;
+    }
 }
