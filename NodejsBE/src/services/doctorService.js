@@ -63,11 +63,13 @@ let saveDetailsInfoDoctor = (inputData) => {
         !inputData.doctorId ||
         !inputData.contentHTML ||
         !inputData.contentMarkdown ||
-        !inputData.action
-        || !inputData.selectedPrice ||
-        !inputData.selectedPayment || !inputData.selectedProvince || !inputData.nameClinic ||
-        !inputData.addressClinic || !inputData.note
-
+        !inputData.action ||
+        !inputData.selectedPrice ||
+        !inputData.selectedPayment ||
+        !inputData.selectedProvince ||
+        !inputData.nameClinic ||
+        !inputData.addressClinic ||
+        !inputData.note
       ) {
         resolve({
           errCode: 1,
@@ -103,8 +105,8 @@ let saveDetailsInfoDoctor = (inputData) => {
           where: {
             doctorId: inputData.doctorId,
           },
-          raw: false
-        })
+          raw: false,
+        });
         if (doctorInfor) {
           //update
           doctorInfor.doctorId = inputData.doctorId;
@@ -115,8 +117,7 @@ let saveDetailsInfoDoctor = (inputData) => {
           doctorInfor.addressClinic = inputData.addressClinic;
           doctorInfor.note = inputData.note;
           await doctorInfor.save();
-        }
-        else {
+        } else {
           //create
           await db.Doctor_Info.create({
             doctorId: inputData.doctorId,
@@ -125,7 +126,7 @@ let saveDetailsInfoDoctor = (inputData) => {
             provinceId: inputData.selectedProvince,
             nameClinic: inputData.nameClinic,
             addressClinic: inputData.addressClinic,
-            note: inputData.note
+            note: inputData.note,
           });
         }
         resolve({
@@ -172,18 +173,21 @@ let getDetailDoctorById = (inputId) => {
               },
               include: [
                 {
-                  model: db.Allcode, as: "priceTypeData",
+                  model: db.Allcode,
+                  as: "priceTypeData",
                   attributes: ["valueEn", "valueVi"],
                 },
                 {
-                  model: db.Allcode, as: "provinceTypeData",
+                  model: db.Allcode,
+                  as: "provinceTypeData",
                   attributes: ["valueEn", "valueVi"],
                 },
                 {
-                  model: db.Allcode, as: "paymentTypeData",
+                  model: db.Allcode,
+                  as: "paymentTypeData",
                   attributes: ["valueEn", "valueVi"],
                 },
-              ]
+              ],
             },
           ],
           raw: false,
@@ -271,6 +275,11 @@ let getScheduleByDate = (doctorId, date) => {
               as: "timeTypeData",
               attributes: ["valueEn", "valueVi"],
             },
+            {
+              model: db.User,
+              as: "doctorData",
+              attributes: ["firstName", "lastName"],
+            },
           ],
           raw: false,
           nest: true,
@@ -296,23 +305,24 @@ let getExtarInforDoctorById = (idInput) => {
         let data = await db.Doctor_Info.findOne({
           where: { doctorId: idInput },
           attributes: {
-            exclude: ["id", "doctorId"]
+            exclude: ["id", "doctorId"],
           },
           include: [
-
             {
-              model: db.Allcode, as: "priceTypeData",
+              model: db.Allcode,
+              as: "priceTypeData",
               attributes: ["valueEn", "valueVi"],
             },
             {
-              model: db.Allcode, as: "provinceTypeData",
+              model: db.Allcode,
+              as: "provinceTypeData",
               attributes: ["valueEn", "valueVi"],
             },
             {
-              model: db.Allcode, as: "paymentTypeData",
+              model: db.Allcode,
+              as: "paymentTypeData",
               attributes: ["valueEn", "valueVi"],
-            }
-
+            },
           ],
           raw: false,
           nest: true,
@@ -338,12 +348,12 @@ let getProfileDoctorById = (inputId) => {
         let data = await db.User.findOne({
           where: { id: inputId },
           attributes: {
-            exclude: ["password"]
+            exclude: ["password"],
           },
           include: [
-
             {
-              model: db.Allcode, as: "positionData",
+              model: db.Allcode,
+              as: "positionData",
               attributes: ["valueEn", "valueVi"],
             },
             {
@@ -357,26 +367,28 @@ let getProfileDoctorById = (inputId) => {
               },
               include: [
                 {
-                  model: db.Allcode, as: "priceTypeData",
+                  model: db.Allcode,
+                  as: "priceTypeData",
                   attributes: ["valueEn", "valueVi"],
                 },
                 {
-                  model: db.Allcode, as: "provinceTypeData",
+                  model: db.Allcode,
+                  as: "provinceTypeData",
                   attributes: ["valueEn", "valueVi"],
                 },
                 {
-                  model: db.Allcode, as: "paymentTypeData",
+                  model: db.Allcode,
+                  as: "paymentTypeData",
                   attributes: ["valueEn", "valueVi"],
                 },
-              ]
+              ],
             },
-
           ],
           raw: false,
           nest: true,
         });
         if (data && data.image) {
-          data.image = new Buffer(data.image, 'base64').toString('binary');
+          data.image = new Buffer(data.image, "base64").toString("binary");
         }
         if (!data) data = [];
         resolve({ errCode: 0, data: data });
@@ -394,5 +406,5 @@ module.exports = {
   bulkCreateSchedule: bulkCreateSchedule,
   getScheduleByDate: getScheduleByDate,
   getExtarInforDoctorById: getExtarInforDoctorById,
-  getProfileDoctorById: getProfileDoctorById
+  getProfileDoctorById: getProfileDoctorById,
 };
