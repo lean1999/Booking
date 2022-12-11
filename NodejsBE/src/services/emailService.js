@@ -45,6 +45,7 @@ let sendSimpleEmail = async (dataSend) => {
       
       `;
     }
+    return result;
   };
   // send mail with defined transport object
   let info = await transporter.sendMail({

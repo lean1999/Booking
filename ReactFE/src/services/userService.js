@@ -44,18 +44,18 @@ const getScheduleDoctorByDate = (doctorId, date) => {
   );
 };
 const getExtraInforDoctorById = (doctorId) => {
-  return axios.get(
-    `/api/get-extra-info-doctor-by-id?doctorId=${doctorId}`
-  );
+  return axios.get(`/api/get-extra-info-doctor-by-id?doctorId=${doctorId}`);
 };
 const getProfileDoctorById = (doctorId) => {
-  return axios.get(
-    `/api/get-profile-doctor-by-id?doctorId=${doctorId}`
-  );
+  return axios.get(`/api/get-profile-doctor-by-id?doctorId=${doctorId}`);
 };
 const postPatientAppoiment = (data) => {
   return axios.post(`/api/patient-book-appointment`, data);
 };
+const postVerifyBookAppoiment = (data) => {
+  return axios.post(`/api/verify-book-appointment`, data);
+};
+
 export {
   handleLoginAPI,
   getAllUsers,
@@ -71,5 +71,6 @@ export {
   getScheduleDoctorByDate,
   getExtraInforDoctorById,
   getProfileDoctorById,
-  postPatientAppoiment
+  postPatientAppoiment,
+  postVerifyBookAppoiment,
 };
