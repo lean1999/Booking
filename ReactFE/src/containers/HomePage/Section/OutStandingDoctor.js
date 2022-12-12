@@ -34,9 +34,9 @@ class OutStandingDoctor extends Component {
       <div className="section-share section-outstanding-doctor">
         <div className="section-container">
           <div className="section-header">
-            <span className="title-section"> Bac si noi bat tuan qua</span>
+            <span className="title-section"> Bác Sĩ Nổi Bật Tuần Qua</span>
             <button type="button" className="btn-section">
-              Xem them
+              Xem thêm
             </button>
           </div>
           <div href="#" className="section-content">
