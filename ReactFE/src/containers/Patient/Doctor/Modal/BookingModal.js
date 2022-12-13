@@ -153,9 +153,6 @@ class BookingModal extends Component {
     if (dataTime && !_.isEmpty(dataTime)) {
       doctorId = dataTime.doctorId;
     }
-    console.log("datatime", dataTime);
-    console.log("data props from modal", this.props);
-    console.log("check state onchange", this.state);
     // fullName: '',
     //     phoneNumber: '',
     //         email: '',

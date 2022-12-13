@@ -35,7 +35,7 @@ class DetailDoctor extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) { }
+  componentDidUpdate(prevProps, prevState, snapshot) {}
   render() {
     console.log(this.state);
     let language = this.props.language;
@@ -54,8 +54,9 @@ class DetailDoctor extends Component {
             <div
               className="content-left"
               style={{
-                backgroundImage: `url("${detailDoctor && detailDoctor.image ? detailDoctor.image : ""
-                  }")`,
+                backgroundImage: `url("${
+                  detailDoctor && detailDoctor.image ? detailDoctor.image : ""
+                }")`,
               }}
             ></div>
             <div className="content-right">
@@ -76,11 +77,11 @@ class DetailDoctor extends Component {
               <DoctorSchedule
                 detailDoctorIdFromParent={this.state.currentDoctorId}
               />
-
             </div>
             <div className="right-content">
               <DoctorExtraInfor
-                doctorIdFromParent={this.state.currentDoctorId} />
+                doctorIdFromParent={this.state.currentDoctorId}
+              />
             </div>
           </div>
           <div className="detail-info-doctor">

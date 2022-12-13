@@ -23,6 +23,7 @@ import DetailDoctor from "../containers/Patient/Doctor/DetailDoctor";
 
 import Doctor from "../routes/Doctor";
 import VerifyEmail from "./Patient/VerifyEmail";
+import DetaiSpecialty from "./Patient/Specialty/DetaiSpecialty";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -66,6 +67,10 @@ class App extends Component {
                   />
                   <Route path={path.HOMEPAGE} component={HomePage} />
                   <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
+                  <Route
+                    path={path.DETAIL_SPECIALTY}
+                    component={DetaiSpecialty}
+                  />
                   <Route
                     path={path.VERIFY_EMAIL_BOOKING}
                     component={VerifyEmail}
