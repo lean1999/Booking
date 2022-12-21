@@ -170,19 +170,19 @@ class HomeHeader extends Component {
                   </div>
                 </div>
                 <div className="option-child">
-                  <div className="icon-child six"></div>
+                  <div className="icon-child seven"></div>
                   <div className="text-child">
                     Gói <br /> Phẩu Thuật
                   </div>
                 </div>
                 <div className="option-child">
-                  <div className="icon-child six"></div>
+                  <div className="icon-child eight"></div>
                   <div className="text-child">
                     Sản Phẩm <br /> Y Tế
                   </div>
                 </div>{" "}
                 <div className="option-child">
-                  <div className="icon-child six"></div>
+                  <div className="icon-child nine"></div>
                   <div className="text-child">
                     Sức Khỏe <br /> Doanh Nghiệp
                   </div>

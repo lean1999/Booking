@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
 import { getAllSpecialty } from "../../../services/userService";
-import "./Specialty.scss";
 import { withRouter } from "react-router";
 
 class Specialty extends Component {
@@ -63,7 +62,7 @@ class Specialty extends Component {
                             backgroundImage: `url("${item.image}")`,
                           }}
                         />
-                        <span>{item.name}</span>
+                        <span className="dt-name">{item.name}</span>
                       </div>
                     );
                   })}

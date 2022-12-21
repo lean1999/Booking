@@ -10,12 +10,14 @@
 
         .content-left{
             width: 20%;
-          
             width: 160px;
             height: 160px;
             margin: 10px 10px;
-            background: center / cover no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             border-radius: 50%;
+            margin: 10px 20px;
         }
         .content-right{
             width: 80%;
@@ -31,6 +33,9 @@
             }
             .content-down{
                 padding-top: 10px;
+                .like-share-plugin{
+                    margin: 10px 0 20px 0;
+                }
             }
         }
     }
@@ -51,11 +56,17 @@
     .detail-info-doctor{
         padding: 10px 10px;
         background-color: #f9f9f9;
+
+        h1,
+        h2,
         h3{
             font-size: 20px;
         }
         img{
             width: 100%;
         }
+    }
+    .comment-doctor{
+        padding: 10px 100px;
     }
 }

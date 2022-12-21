@@ -12,77 +12,67 @@ let buildUrlEmail = (doctorId, token) => {
 let postBookAppointmentService = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      // if (!data.email || !data.doctorId || !data.timeType || !data.date) {
-      //   resolve({
-      //     errCode: 1,
-      //     errMessage: "Missing parameter",
-      //   });
-      // } else {
-      //   // upsert patient
-      //   let user = await db.User.findOrCreate({
-      //     where: { email: data.email },
-      //     defaults: {
-      //       email: data.email,
-      //       roleId: "R3",
-      //     },
-      //   });
-      //   await emailService.sendSimpleEmail(data.email);
-      //   console.log("check usser", user);
-      //   //create a booking record
-      //   if (user && user[0]) {
-      //     await db.Booking.findOrCreate({
-      //       where: { patientId: user[0].id },
-      //       defaults: {
-      //         statusId: "S1",
-      //         doctorId: data.doctorId,
-      //         patientId: user[0].id,
-      //         date: data.date,
-      //         timeType: data.timeType,
-      //       },
-      //     });
-      //   }
-      //   resolve({
-      //     errCode: 0,
-      //     errMessage: "Save infor patient success",
-      //   });
-      // }
-      // upsert patient
-
-      resolve({
-        data,
-      });
-
-      let token = uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
-      await emailService.sendSimpleEmail({
-        receiverEmail: data.email,
-        patientName: data.fullName,
-        time: data.timeString,
-        doctorName: data.doctorName,
-        language: data.language,
-        redirectLink: buildUrlEmail(data.doctorId, token),
-      });
-      let user = await db.User.findOrCreate({
-        where: { email: data.email },
-        defaults: {
-          email: data.email,
-          roleId: "R3",
-        },
-      });
-      console.log("check usser", user);
-      //create a booking record
-      if (user && user[0]) {
-        await db.Booking.findOrCreate({
-          where: { patientId: user[0].id },
+      if (
+        !data.email ||
+        !data.doctorId ||
+        !data.timeType ||
+        !data.date ||
+        !data.fullName ||
+        !data.selectedGender ||
+        !data.address
+      ) {
+        resolve({
+          errCode: 1,
+          errMessage: "Missing parameter",
+        });
+      } else {
+        let token = uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+        await emailService.sendSimpleEmail({
+          receiverEmail: data.email,
+          patientName: data.fullName,
+          time: data.timeString,
+          doctorName: data.doctorName,
+          language: data.language,
+          redirectLink: buildUrlEmail(data.doctorId, token),
+        });
+        // upsert patient
+        let user = await db.User.findOrCreate({
+          where: { email: data.email },
           defaults: {
-            statusId: "S1",
-            doctorId: data.doctorId,
-            patientId: user[0].id,
-            date: data.date,
-            timeType: data.timeType,
-            token: token,
+            email: data.email,
+            roleId: "R3",
+            gender: data.selectedGender,
+            address: data.address,
+            lastName: data.fullName,
           },
         });
+        // await emailService.sendSimpleEmail(data.email);
+        // console.log("check usser", user);
+        //create a booking record
+        if (user && user[0]) {
+          await db.Booking.findOrCreate({
+            where: { patientId: user[0].id },
+            defaults: {
+              statusId: "S1",
+              doctorId: data.doctorId,
+              patientId: user[0].id,
+              date: data.date,
+              timeType: data.timeType,
+              token: token,
+            },
+          });
+        }
+        // resolve({
+        //   errCode: 0,
+        //   errMessage: "Save infor patient success",
+        // });
       }
+      // upsert patient
+
+      // resolve({
+      //   data,
+      // });
+
       resolve({
         errCode: 0,
         errMessage: "Save infor patient success",

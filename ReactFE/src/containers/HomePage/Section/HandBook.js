@@ -10,7 +10,7 @@ class HandBook extends Component {
         <div className="section-share section-handbook">
           <div className="section-container">
             <div className="section-header">
-              <span className="title-section"> Chuyên Khoa Phổ Biến</span>
+              <span className="title-section"> Tin Tức Nối Bật Tuần Qua</span>
               <button type="button" className="btn-section">
                 {" "}
                 Xem them
@@ -20,23 +20,23 @@ class HandBook extends Component {
               <Slider {...this.props.settings}>
                 <div className="section-customize">
                   <div className="img-bg section-handbook" />
-                  <span>co xuong khop</span>
+                  <span>Bản Tin 1</span>
                 </div>
                 <div className="section-customize">
                   <div className="img-bg section-handbook" />
-                  <span>co xuong khop</span>
+                  <span>Bản Tin 1</span>
                 </div>
                 <div className="section-customize">
                   <div className="img-bg section-handbook" />
-                  <span>co xuong khop</span>
+                  <span>Bản Tin 1</span>
                 </div>
                 <div className="section-customize">
                   <div className="img-bg section-handbook" />
-                  <span>co xuong khop</span>
+                  <span>Bản Tin 1</span>
                 </div>
                 <div className="section-customize">
                   <div className="img-bg section-handbook" />
-                  <span>co xuong khop</span>
+                  <span>Bản Tin 1</span>
                 </div>
               </Slider>
             </div>

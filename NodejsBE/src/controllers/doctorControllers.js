@@ -85,9 +85,7 @@ let getScheduleByDate = async (req, res) => {
 };
 let getExtarInforDoctorById = async (req, res) => {
   try {
-    let info = await doctorService.getExtarInforDoctorById(
-      req.query.doctorId
-    );
+    let info = await doctorService.getExtarInforDoctorById(req.query.doctorId);
     res.status(200).json(info);
   } catch (e) {
     console.log(e);
@@ -99,9 +97,36 @@ let getExtarInforDoctorById = async (req, res) => {
 };
 let getProfileDoctorById = async (req, res) => {
   try {
-    let info = await doctorService.getProfileDoctorById(
-      req.query.doctorId
+    let info = await doctorService.getProfileDoctorById(req.query.doctorId);
+    res.status(200).json(info);
+  } catch (e) {
+    console.log(e);
+    res.status(200).json({
+      errCode: -1,
+      message: "Error from sever ....",
+    });
+  }
+};
+
+let getListPatientsForDoctor = async (req, res) => {
+  try {
+    let info = await doctorService.getListPatientsForDoctor(
+      req.query.doctorId,
+      req.query.date
     );
+    res.status(200).json(info);
+  } catch (e) {
+    console.log(e);
+    res.status(200).json({
+      errCode: -1,
+      message: "Error from sever ....",
+    });
+  }
+};
+
+let sendRemedy = async (req, res) => {
+  try {
+    let info = await doctorService.sendRemedy(req.body);
     res.status(200).json(info);
   } catch (e) {
     console.log(e);
@@ -120,5 +145,7 @@ module.exports = {
   bulkCreateSchedule: bulkCreateSchedule,
   getScheduleByDate: getScheduleByDate,
   getExtarInforDoctorById: getExtarInforDoctorById,
-  getProfileDoctorById: getProfileDoctorById
+  getProfileDoctorById: getProfileDoctorById,
+  getListPatientsForDoctor: getListPatientsForDoctor,
+  sendRemedy: sendRemedy,
 };
