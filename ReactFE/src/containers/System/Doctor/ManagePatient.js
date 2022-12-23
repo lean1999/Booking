@@ -14,7 +14,7 @@ import NumberFormat from "react-number-format";
 import RemedyModel from "./RemedyModel";
 import { toast } from "react-toastify";
 import LoadingOverlay from "react-loading-overlay";
-
+import CreatePrecription from "./CreatePrecription";
 class DefaultClass extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +24,7 @@ class DefaultClass extends Component {
       isOpenRemedyModal: false,
       dataModel: {},
       isShowLoading: false,
+      showCreatePresiton: false,
     };
   }
 
@@ -130,10 +131,14 @@ class DefaultClass extends Component {
       this.setState({ isShowLoading: false });
     }
   };
+  handleShowCreatePresition = () => {
+    this.setState({ showCreatePresiton: true });
+  };
   render() {
     let yesterday = new Date(new Date().setHours(0, 0, 0, 0));
     let { language } = this.props;
-    let { dataPatient, isOpenRemedyModal, dataModel } = this.state;
+    let { dataPatient, isOpenRemedyModal, dataModel, showCreatePresiton } =
+      this.state;
 
     return (
       <>
@@ -159,6 +164,19 @@ class DefaultClass extends Component {
               <div className="col-12 table-manage-patient">
                 <section>
                   <h1>Table Patient</h1>
+                  <button
+                    className="btn btn-primary create-precription"
+                    onClick={this.handleShowCreatePresition}
+                  >
+                    Tạo Đơn Thuốc
+                  </button>
+                  {showCreatePresiton === true ? (
+                    <>
+                      <CreatePrecription />
+                    </>
+                  ) : (
+                    <></>
+                  )}
                   <div className="tbl-header">
                     <table cellpadding="0" cellspacing="0" border="0">
                       <thead>
