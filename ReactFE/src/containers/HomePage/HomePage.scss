@@ -3,9 +3,9 @@
     width: 100%;
     padding: 0 20px;
     position: sticky;
-    background: #ffb700;
+    background: #022e45;
     top: 0;
-    z-index: 100;
+    z-index: 10000;
     box-shadow: 0px 1px 10px 3px;
 
     .home-header-content {
@@ -46,6 +46,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            color: powderblue;
 
             .child-content {
                 b {
@@ -63,6 +64,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            color: powderblue;
 
             .support {
                 padding-right: 50px;
@@ -272,6 +274,10 @@
 
             .content-left {
                 width: 60%;
+
+                iframe {
+                    border-radius: 5px;
+                }
             }
 
             .content-right {
@@ -286,6 +292,7 @@
                     font-size: 16px;
                     font-style: italic;
                     text-align: left;
+                    padding-left: 3.5rem;
 
                     li:before {
                         content: "-";
@@ -361,6 +368,7 @@
 
                     &.section-handbook {
                         background-image: url('../../assets/images/bg-img/doctor_PNG16032.webp');
+                        margin-bottom: 10px;
                     }
 
                 }

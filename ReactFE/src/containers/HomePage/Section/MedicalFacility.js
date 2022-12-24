@@ -38,7 +38,7 @@ class MedicalFacility extends Component {
 
             <button type="button" className="btn-section">
               {" "}
-              Xem them
+              Xem thêm
             </button>
           </div>
           <div href="#" className="section-content">
