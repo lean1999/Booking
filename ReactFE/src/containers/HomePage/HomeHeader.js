@@ -6,6 +6,8 @@ import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils/constant";
 import { changeLanguageApp } from "../../store/actions";
 import { withRouter } from "react-router";
+import logovn from '../../assets/images/logovn.png';
+import logoen from '../../assets/images/logoen.png';
 class HomeHeader extends Component {
   ChangeLanguages = (language) => {
     this.props.changeLanguageAppRedux(language);
@@ -93,6 +95,8 @@ class HomeHeader extends Component {
                     this.ChangeLanguages(LANGUAGES.VI);
                   }}
                 >
+                  {language === LANGUAGES.VI ? <img src={logovn} className='logovn' style={{ width: '50px', height: '30px', margin: '10px', borderRadius: '5px' }} /> : <></>
+                  }
                   VN
                 </span>
               </div>
@@ -108,6 +112,8 @@ class HomeHeader extends Component {
                     this.ChangeLanguages(LANGUAGES.EN);
                   }}
                 >
+                  {language === LANGUAGES.EN ? <img src={logoen} className='logoen' style={{ width: '50px', height: '30px', margin: '10px', borderRadius: '5px' }} /> : <></>
+                  }
                   EN
                 </span>
               </div>

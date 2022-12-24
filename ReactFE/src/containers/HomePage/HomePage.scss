@@ -34,8 +34,9 @@
 
             i {
                 font-size: 25px;
-                color: gray;
+                color: white;
                 cursor: pointer;
+                margin-left: 10px;
             }
 
         }
@@ -73,7 +74,7 @@
                 cursor: pointer;
 
                 i {
-                    font-size: 12px;
+                    font-size: 20px;
                     margin-right: 5px;
                     color: #49bce2;
                 }
@@ -426,7 +427,43 @@
                     background-color: #022e45;
                     /* width: 100%; */
                     border-radius: 10px;
-                    width: 28%;
+                    width: 27.5%;
+                }
+
+                .border-load-outstanding {
+                    height: 4px;
+                    background-color: #022e45;
+                    /* width: 100%; */
+                    border-radius: 10px;
+                    width: 22.5%;
+                    margin-left: 1px;
+                }
+
+                .border-load-doctor {
+                    height: 4px;
+                    background-color: #022e45;
+                    /* width: 100%; */
+                    border-radius: 10px;
+                    width: 29.5%;
+                    margin-left: 1px;
+                }
+
+                .border-load-news {
+                    height: 4px;
+                    background-color: #022e45;
+                    /* width: 100%; */
+                    border-radius: 10px;
+                    width: 30.5%;
+                    margin-left: 1px;
+                }
+
+                .border-load-tutorial {
+                    height: 4px;
+                    background-color: #022e45;
+                    /* width: 100%; */
+                    border-radius: 10px;
+                    width: 33%;
+                    margin-left: 1px;
                 }
             }
 
@@ -486,6 +523,11 @@
 .home-footer {
     text-align: center;
     padding: 10px 0;
+    background-color: #64b9e5;
+
+    p {
+        margin: 10px;
+    }
 
     a {
         text-decoration: none;
