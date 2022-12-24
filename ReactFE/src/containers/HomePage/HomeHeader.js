@@ -22,8 +22,14 @@ class HomeHeader extends Component {
               <i className="fas fa-bars"></i>
 
               <div className="header-logo">
-                <a href="/home" className="">
-                  {" "}
+                <a href="/home" className="header-logo-link">
+                  <span>
+                    Booking
+                  </span>
+                  <span>
+                    Doctor.com
+                  </span>
+
                 </a>
               </div>
             </div>

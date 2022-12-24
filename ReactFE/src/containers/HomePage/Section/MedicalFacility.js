@@ -35,6 +35,7 @@ class MedicalFacility extends Component {
         <div className="section-container">
           <div className="section-header">
             <span className="title-section"> Cơ Sở Y Tế Nổi Bật</span>
+
             <button type="button" className="btn-section">
               {" "}
               Xem them
