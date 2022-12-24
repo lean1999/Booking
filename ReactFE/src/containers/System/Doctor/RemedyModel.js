@@ -60,7 +60,7 @@ class RemedyModel extends Component {
           className={"booking-modal-container"}
           size="md"
           centered
-          // backdrop={true}
+        // backdrop={true}
         >
           <div className="modal-header">
             <h5 className="modal-title"> Gửi hóa đơn khám bệnh </h5>

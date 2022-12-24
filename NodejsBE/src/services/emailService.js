@@ -101,11 +101,11 @@ let sendAttachment = async (dataSend) => {
         html: getBodyHTMLEmailRemedy(dataSend),
         attachments: [
           {
-            filename: `remedy-${
-              dataSend.patientId
-            }-${new Date().getTime()}.png`,
+            filename: `remedy-${dataSend.patientId
+              }-${new Date().getTime()}.png`,
             content: dataSend.imgBase64.split("base64,")[1],
             encoding: "base64",
+            contentType: 'application/pdf'
           },
         ],
       });
