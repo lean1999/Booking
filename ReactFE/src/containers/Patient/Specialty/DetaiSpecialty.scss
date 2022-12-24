@@ -1,31 +1,39 @@
-.detail-specialty-container{
-    .description-specialty{
+.detail-specialty-container {
+    .description-specialty {
+        border-radius: 5px;
         background-color: white !important;
-       padding: 10px;
-       margin: 15px 0;
-       h1,h2,h3{
-        font-size:16px;
-        font-weight: 600;
-       }
+        padding: 10px;
+        margin: 15px 0;
+        box-shadow: 0 1px 6px #20212447;
+
+        h1,
+        h2,
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
     }
-    .detail-specialty-body{
+
+    .detail-specialty-body {
         padding: 0 200px;
-        background:#eee;
-        display:flex;
+        background: white;
+        display: flex;
         flex-direction: column;
     }
-    .search-sp-doctor{
-        select{
+
+    .search-sp-doctor {
+        select {
             height: 30px;
-            padding: 5px 30px ;
-            border:none;
+            padding: 5px 30px;
+            border: none;
             outline: none;
             border-radius: 3px;
             cursor: pointer;
         }
     }
-    .each-doctor{
-        display:flex;
+
+    .each-doctor {
+        display: flex;
         width: 100%;
         min-height: 300px;
         margin: 15px 0;
@@ -33,26 +41,30 @@
         box-shadow: 0 1px 6px #20212447;
         border-radius: 8px;
         padding: 15px;
-        .dt-content-left{
+
+        .dt-content-left {
             width: 50%;
-          
-      
+
+
         }
-        .dt-content-right{
+
+        .dt-content-right {
             width: 50%;
             padding: 10px;
+
             // box-shadow: 0 1px 6px #20212447;
-            .doctor-schedule{
+            .doctor-schedule {
                 .doctor-schedule-container {
-                   
+
                     border-bottom: 1px solid #ddd !important;
                     border-right: unset !important;
-                    
+
                 }
             }
-            .doctor-extra-info{
+
+            .doctor-extra-info {
                 .doctor-extra-info-container {
-                    padding-left: 0px !important; 
+                    padding-left: 0px !important;
                 }
             }
         }

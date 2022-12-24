@@ -50,6 +50,8 @@
             color: powderblue;
 
             .child-content {
+                cursor: pointer;
+
                 b {
                     text-transform: uppercase;
                 }
@@ -331,6 +333,7 @@
                     padding-top: 10px;
                     text-align: center;
                     justify-content: center;
+                    font-weight: bold;
 
                     &:hover {
                         cursor: pointer;
