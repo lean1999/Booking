@@ -1,0 +1,52 @@
+footer.page-footer.red.font-small.pt-4.mt-4 {
+    background-color: #051e3a;
+    // background-image: linear-gradient(to right, #0964b0, #2c99d6);
+    // background: rgb(17, 104, 145);
+    height: 550px;
+}
+
+.font-small {
+    background-color: #022e45;
+}
+
+.list-unstyled {
+    cursor: pointer;
+}
+
+.content-footer {
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-evenly;
+
+    .contact-booking {
+        margin-left: 10px;
+        margin-right: 10px;
+
+        // .content-footer-more {
+        //     text-align: left !important;
+        // }
+    }
+
+    .connect-booking {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .work-booking {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .text-content-footer-contact {
+        text-align: left !important;
+    }
+}
+
+.footer-copyright {
+    border-top: 1px solid white;
+
+    .copyright {
+        font-size: 1rem;
+        color: white;
+    }
+}
