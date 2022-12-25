@@ -12,6 +12,7 @@ import OutStandingDoctor from "./Section/OutStandingDoctor";
 import HandBook from "./Section/HandBook";
 import About from "./Section/About";
 import HomeFooter from "./Section/HomeFooter";
+import Footer from "../Footer";
 class HomePage extends Component {
   render() {
     var settings = {
@@ -29,7 +30,8 @@ class HomePage extends Component {
         <OutStandingDoctor settings={settings} />
         <HandBook settings={settings} />
         <About />
-        <HomeFooter />
+        {/* <HomeFooter /> */}
+        <Footer />
       </div>
     );
   }

@@ -116,8 +116,12 @@ class HomeHeader extends Component {
                   }
                   EN
                 </span>
+                <button className="btn btn-warning btn-login" style={{ marginLeft: '25px', paddingLeft: '5px', paddingRight: '5px' }}>
+                  <a href="/login" style={{ textDecoration: 'none', color: 'black' }}> Đăng Nhập</a>
+                </button>
               </div>
             </div>
+
           </div>
         </div>
         {this.props.isShowBanner === true && (
