@@ -41,10 +41,10 @@ class Specialty extends Component {
                 <FormattedMessage id="home-pages.specialty-popular" />
                 <span className="border-load"></span>
               </span>
-              <button type="button" className="btn-section">
+              {/* <button type="button" className="btn-section">
                 {" "}
                 <FormattedMessage id="home-pages.more-info" />
-              </button>
+              </button> */}
             </div>
             <div href="#" className="section-content">
               <Slider {...this.props.settings}>

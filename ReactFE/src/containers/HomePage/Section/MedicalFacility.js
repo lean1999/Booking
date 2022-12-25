@@ -34,11 +34,11 @@ class MedicalFacility extends Component {
       <div className="section-share section-medical-facility">
         <div className="section-container">
           <div className="section-header">
-            <span className="title-section"> Cơ Sở Y Tế Nổi Bật</span>
+            <span className="title-section"> Cơ Sở Y Tế Nổi Bật<span className="border-load-outstanding"></span></span>
 
             <button type="button" className="btn-section">
               {" "}
-              Xem them
+              Xem thêm
             </button>
           </div>
           <div href="#" className="section-content">

@@ -9,7 +9,8 @@ class About extends Component {
         {" "}
         <div className="section-container">
           <div className="section-header">
-            <div className="title-section">Hướng Dẫn Book a Doctor</div>
+            <div className="title-section">Hướng Dẫn Book a Doctor
+              <span className="border-load-tutorial"></span></div>
           </div>
           <div className="section-about-content">
             <div className="content-left">
