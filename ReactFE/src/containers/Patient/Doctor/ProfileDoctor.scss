@@ -1,30 +1,44 @@
 .profile-doctor-container {
     .intro-doctor {
         display: flex;
+        flex-direction: column;
+        
 
 
         .content-left {
             width: 80px;
             height: 80px;
-            background: center / cover no-repeat;
+            // background: center / cover no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
             border-radius: 50%;
         }
 
         .content-right {
-            width: calc(100% - 80px);
+            width: calc(100% - 120px);
             display: flex;
             flex-direction: column;
-            padding-left: 10px;
+            // padding-left: 10px;
 
             .content-up {
 
                 font-weight: 600;
+                margin-bottom: 20px;
+                margin-top: 10px;
 
             }
 
             .content-down {
                 text-align: justify;
+                // letter-spacing: 1px;
+
             }
+        }
+    }
+    .view-detail-doctor{
+        a.view-detail-link{
+            text-decoration: none;
+           color: #45c3d2;;
         }
     }
 

@@ -121,7 +121,10 @@ class DetailSpecialty extends Component {
             )}
           </div>
           <div className="search-sp-doctor">
-            <select onChange={(event) => this.handleOnChangeSelect(event)}>
+            <select
+              onChange={(event) => this.handleOnChangeSelect(event)}
+              className="doctor-select"
+            >
               {listProvince &&
                 listProvince.length > 0 &&
                 listProvince.map((item, index) => {

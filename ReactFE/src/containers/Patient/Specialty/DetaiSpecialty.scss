@@ -16,19 +16,21 @@
 
     .detail-specialty-body {
         padding: 0 200px;
-        background: white;
+        background: #eeeeee;
         display: flex;
         flex-direction: column;
     }
 
     .search-sp-doctor {
         select {
+            // display: block;
             height: 30px;
             padding: 5px 30px;
-            border: none;
+            border: 1px solid #ccc;
             outline: none;
             border-radius: 3px;
             cursor: pointer;
+            
         }
     }
 

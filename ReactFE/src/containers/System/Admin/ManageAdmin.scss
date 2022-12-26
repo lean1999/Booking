@@ -1,0 +1,163 @@
+.container-manage-admin {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+
+    .manage-admin {
+        width: 100%;
+        display: flex;
+        height: -webkit-fill-available;
+
+        .content-left-admin {
+            width: 25%;
+            background-color: #045454;
+            height: -webkit-fill-available;
+            padding-top: 20px;
+
+            .title-app {
+                font-size: 30px;
+                color: white;
+                font-weight: 900;
+                font-family: cursive;
+                text-align: center;
+                letter-spacing: 0.5px;
+                border-bottom: 1px solid gray;
+                padding-top: 2px;
+                padding-bottom: 12px;
+            }
+
+            .menu-manage-admin {
+                padding-left: 40px;
+                padding-top: 10px;
+
+                .mn-user {
+                    font-size: 20px;
+                    color: white;
+                    font-weight: 600;
+                    font-family: sans-serif;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+
+                    .sub-mn {
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding-left: 55px;
+                        padding-top: 10px;
+                    }
+                }
+
+                .mn-clinic {
+                    font-size: 20px;
+                    color: white;
+                    font-weight: 600;
+                    font-family: sans-serif;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+
+                    .sub-mn {
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding-left: 55px;
+                        padding-top: 10px;
+                    }
+                }
+
+                .mn-specialist {
+                    font-size: 20px;
+                    color: white;
+                    font-weight: 600;
+                    font-family: sans-serif;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+
+                    .sub-mn {
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding-left: 55px;
+                        padding-top: 10px;
+                    }
+                }
+
+                .mn-handlebook {
+                    font-size: 20px;
+                    color: white;
+                    font-weight: 600;
+                    font-family: sans-serif;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+
+                    .sub-mn {
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding-left: 55px;
+                        padding-top: 10px;
+                    }
+                }
+
+                .mn-exit {
+                    font-size: 20px;
+                    color: white;
+                    font-weight: 600;
+                    font-family: sans-serif;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+
+                        &:hover {
+                            color: red;
+                        }
+                    }
+
+                    .sub-mn {
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding-left: 55px;
+                        padding-top: 10px;
+                    }
+
+                }
+            }
+        }
+
+        .content-right-admin {
+            width: 75%;
+            // background-color: cadetblue;
+            height: -webkit-fill-available;
+
+            .header-content-right-admin {
+                position: relative;
+                background-color: #045454;
+                height: 80px;
+                color: white;
+                display: flex;
+
+                .title-manage-admin {
+                    width: 30%;
+                    font-size: 20px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    font-family: system-ui;
+                    padding-left: 25px;
+                    padding-top: 25px;
+                    border-left: 1px solid gray;
+                }
+
+                .info-admin {
+
+                    width: 70%;
+                    text-align: end;
+                    font-size: 15px;
+                    font-weight: 700;
+                    padding-top: 25px;
+                    padding-right: 20px;
+                }
+            }
+
+            .show-content-right-admin {
+                padding: 15px;
+            }
+        }
+    }
+}

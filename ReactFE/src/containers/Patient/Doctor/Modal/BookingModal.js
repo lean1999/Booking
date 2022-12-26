@@ -23,7 +23,7 @@ class BookingModal extends Component {
       email: "",
       address: "",
       reason: "",
-      birthday: "",
+      birthday: moment(new Date()).startOf("day").valueOf(),
       genders: "",
       doctorId: "",
       selectedGender: "",
@@ -35,6 +35,15 @@ class BookingModal extends Component {
   async componentDidMount() {
     this.props.getGenders();
   }
+
+  disableDates = () => {
+    var today, dd, mm, yyyy;
+    today = new Date();
+    dd = today.getDate() + 1;
+    mm = today.getMonth() + 1;
+    yyyy = today.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+  };
   buildDataGender = (data) => {
     let result = [];
     let language = this.props.language;
@@ -159,6 +168,7 @@ class BookingModal extends Component {
   };
   render() {
     let { isOpenModal, closeBookingClose, dataTime } = this.props;
+    let yesterday = new Date(new Date().setTime());
     let doctorId = "";
     if (dataTime && !_.isEmpty(dataTime)) {
       doctorId = dataTime.doctorId;
@@ -278,6 +288,7 @@ class BookingModal extends Component {
                       onChange={this.handleOnchangeDatePiker}
                       className="form-control"
                       value={this.state.birthday}
+                      maxDate={this.disableDates()}
                     />
                   </div>
                   <div className="col-6 form-group">

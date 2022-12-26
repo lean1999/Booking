@@ -10,8 +10,11 @@ class HandBook extends Component {
         <div className="section-share section-handbook">
           <div className="section-container">
             <div className="section-header">
-              <span className="title-section"> Tin Tức Nối Bật Tuần Qua
-                <span className="border-load-news"></span></span>
+              <span className="title-section">
+                {" "}
+                Tin Tức Nối Bật Tuần Qua
+                <span className="border-load-news"></span>
+              </span>
               <button type="button" className="btn-section">
                 {" "}
                 Xem them
@@ -25,19 +28,15 @@ class HandBook extends Component {
                 </div>
                 <div className="section-customize">
                   <div className="img-bg section-handbook" />
-                  <span className="news">Bản Tin 1</span>
+                  <span className="news">Bản Tin 2</span>
                 </div>
                 <div className="section-customize">
                   <div className="img-bg section-handbook" />
-                  <span className="news">Bản Tin 1</span>
+                  <span className="news">Bản Tin 3</span>
                 </div>
                 <div className="section-customize">
                   <div className="img-bg section-handbook" />
-                  <span className="news">Bản Tin 1</span>
-                </div>
-                <div className="section-customize">
-                  <div className="img-bg section-handbook" />
-                  <span className="news">Bản Tin 1</span>
+                  <span className="news">Bản Tin 4</span>
                 </div>
               </Slider>
             </div>

@@ -25,6 +25,8 @@ import Doctor from "../routes/Doctor";
 import VerifyEmail from "./Patient/VerifyEmail";
 import DetailSpecialty from "./Patient/Specialty/DetailSpecialty";
 import DetailClinic from "./Patient/Clinic/DetailClinic";
+import ManageAdmin from "./System/Admin/ManageAdmin";
+import Doctormn from "./System/Admin/Doctor";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -66,7 +68,11 @@ class App extends Component {
                     path={"/doctor/"}
                     component={userIsAuthenticated(Doctor)}
                   />
+
+                  <Route path={path.ADMIN} component={ManageAdmin} />
+                  <Route path={path.DOCTOR} component={Doctormn} />
                   <Route path={path.HOMEPAGE} component={HomePage} />
+
                   <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                   <Route
                     path={path.DETAIL_SPECIALTY}

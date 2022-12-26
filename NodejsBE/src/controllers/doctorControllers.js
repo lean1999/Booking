@@ -136,7 +136,21 @@ let sendRemedy = async (req, res) => {
     });
   }
 };
-
+let getListPatientsForDt = async (req, res) => {
+  try {
+    let info = await doctorService.getListPatientsForDt(
+      req.query.doctorId,
+      req.query.date
+    );
+    res.status(200).json(info);
+  } catch (e) {
+    console.log(e);
+    res.status(200).json({
+      errCode: -1,
+      message: "Error from sever ....",
+    });
+  }
+};
 module.exports = {
   getDoctorHome: getDoctorHome,
   getAllDoctors: getAllDoctors,
@@ -148,4 +162,5 @@ module.exports = {
   getProfileDoctorById: getProfileDoctorById,
   getListPatientsForDoctor: getListPatientsForDoctor,
   sendRemedy: sendRemedy,
+  getListPatientsForDt: getListPatientsForDt,
 };

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Select from "react-select";
-import "./ManagePatient.scss";
+import "./ManagePrescription.scss";
 import moment from "moment";
 import DatePicker from "../../../components/Input/DatePicker";
 import {
-  getAllPatientForDoctor,
+  getListPatientForDoctor,
   postSendRemedy,
 } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
@@ -15,7 +15,7 @@ import RemedyModel from "./RemedyModel";
 import { toast } from "react-toastify";
 import LoadingOverlay from "react-loading-overlay";
 import CreatePrecription from "./CreatePrecription";
-class ManagePatient extends Component {
+class ManagePrescription extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ class ManagePatient extends Component {
 
     let formattedDate = new Date(currentDate).getTime();
     console.log("this state", this.state);
-    let res = await getAllPatientForDoctor({
+    let res = await getListPatientForDoctor({
       doctorId: user.id,
       date: formattedDate,
     });
@@ -132,7 +132,7 @@ class ManagePatient extends Component {
     }
   };
   render() {
-    let yesterday = new Date(new Date().setHours(0, 0, 0, 0));
+    let yesterday = new Date(new Date().getTime());
     let { language } = this.props;
     let { dataPatient, isOpenRemedyModal, dataModel } = this.state;
 
@@ -145,7 +145,7 @@ class ManagePatient extends Component {
         >
           <div className="manage-patient-container">
             <div className="manage-patient-title">
-              Quản lý bệnh nhân khám bệnh{" "}
+              Quản lý bệnh nhân Đơn thuốc
             </div>
             <div className="manage-patient-body  row">
               <div className="col-4 form-group">
@@ -154,7 +154,7 @@ class ManagePatient extends Component {
                   onChange={this.handleChangeDate}
                   className="form-control"
                   value={this.state.currentDate}
-                  minDate={yesterday}
+                  maxDate={yesterday}
                 />
               </div>
               <div className="col-12 table-manage-patient">
@@ -248,4 +248,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManagePatient);
+export default connect(mapStateToProps, mapDispatchToProps)(ManagePrescription);
