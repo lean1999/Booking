@@ -27,7 +27,7 @@ class ManageHandBook extends Component {
     }
   }
   getAllPatientAcceptDK = async () => {
-    let response = await getAllPatientAccept("S3");
+    let response = await getAllPatientAccept("S4");
     if (response && response.err === 0) {
       this.setState({
         arrPatient: response.patientAccept,

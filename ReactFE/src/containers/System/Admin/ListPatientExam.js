@@ -20,7 +20,7 @@ class ListPatientExam extends Component {
   }
 
   async componentDidMount() {
-    let res = await getAllListPatient("S3");
+    let res = await getAllListPatient("S4");
     console.log("res", res);
     if (res && res.err === 0) {
       this.setState({
