@@ -8,6 +8,7 @@ import ProfileDoctor from "../Doctor/ProfileDoctor";
 import { getAllDetailClinicById } from "../../../services/userService";
 import _ from "lodash";
 import { LANGUAGES } from "../../../utils";
+import Footer from "../../Footer";
 class DetailClinic extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +33,7 @@ class DetailClinic extends Component {
         let currentDoctorId = [];
         if (data && !_.isEmpty(res.data)) {
           let arr = data.doctorClinic;
+          console.log("asd", arr);
           if (arr && arr.length > 0) {
             arr.map((item) => {
               currentDoctorId.push(item.doctorId);
@@ -100,6 +102,7 @@ class DetailClinic extends Component {
               );
             })}
         </div>
+        <Footer />
       </div>
     );
   }

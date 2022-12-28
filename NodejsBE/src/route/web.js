@@ -90,7 +90,14 @@ let initWebRoutes = (app) => {
     "/api/get-list-patient-for-dt",
     doctorControllers.getListPatientsForDt
   );
+  router.get("/api/get-all-list-patient", doctorControllers.getAllListPatient);
 
+  router.get(
+    "/api/get-all-patient-accept",
+    doctorControllers.getaAllPatientAccept
+  );
+
+  router.post("/api/send-prescription", doctorControllers.sendPrescription);
   return app.use("/", router);
 };
 module.exports = initWebRoutes;

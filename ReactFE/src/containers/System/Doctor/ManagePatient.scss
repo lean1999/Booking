@@ -9,13 +9,14 @@ div._loading_overlay_wrapper {
  
 body {
   
-  font-family: 'Roboto', sans-serif;
+  
 }
   
 
 .manage-patient-container{
+  height: 90%vh;
   background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-  background: linear-gradient(to right, #25c481, #25b7c4);
+background: linear-gradient(to right, #25c481, #25b7c4);
     margin:0 200px;
     .manage-patient-title{
       font-size: 30px;

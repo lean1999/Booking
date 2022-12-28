@@ -6,7 +6,7 @@ import moment from "moment";
 import DatePicker from "../../../components/Input/DatePicker";
 import {
   getListPatientForDoctor,
-  postSendRemedy,
+  postSendPrescription,
 } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
 import { FormattedMessage } from "react-intl";
@@ -107,10 +107,10 @@ class ManagePrescription extends Component {
     });
   };
 
-  sendRemedy = async (dataChild) => {
+  sendPrescription = async (dataChild) => {
     let { dataModel } = this.state;
     this.setState({ isShowLoading: true });
-    let res = await postSendRemedy({
+    let res = await postSendPrescription({
       email: dataChild.email,
       imgBase64: dataChild.imgBase64,
       doctorId: dataModel.doctorId,
@@ -121,8 +121,9 @@ class ManagePrescription extends Component {
 
       // ...dataChild,
     });
+    console.log("res,", res);
     if (res && res.errCode === 0) {
-      toast.success("Send success message !");
+      toast.success("Send gmail Success !");
       this.setState({ isShowLoading: false });
       this.closeRemedyClose();
       await this.getDatePatient();
@@ -132,7 +133,13 @@ class ManagePrescription extends Component {
     }
   };
   render() {
-    let yesterday = new Date(new Date().getTime());
+    let toDay = new Date();
+    let toDayString =
+      toDay.getDate() +
+      "/" +
+      (toDay.getMonth() + 1) +
+      "/" +
+      toDay.getFullYear();
     let { language } = this.props;
     let { dataPatient, isOpenRemedyModal, dataModel } = this.state;
 
@@ -144,23 +151,21 @@ class ManagePrescription extends Component {
           text="Loading..."
         >
           <div className="manage-patient-container">
-            <div className="manage-patient-title">
-              Quản lý bệnh nhân Đơn thuốc
-            </div>
+            <div className="manage-patient-title">Quản lý Đơn thuốc</div>
             <div className="manage-patient-body  row">
-              <div className="col-4 form-group">
-                <label> Chọn ngày khám</label>
+              <div className="col-4 form-group" style={{ color: "white" }}>
+                <h3> Hôm nay là:</h3>
                 <DatePicker
                   onChange={this.handleChangeDate}
                   className="form-control"
                   value={this.state.currentDate}
-                  maxDate={yesterday}
+                  minDate={toDayString}
+                  maxDate={toDayString}
                 />
               </div>
               <div className="col-12 table-manage-patient">
                 <section>
                   <h1>Table Patient</h1>
-
                   <div className="tbl-header">
                     <table cellpadding="0" cellspacing="0" border="0">
                       <thead>
@@ -201,7 +206,7 @@ class ManagePrescription extends Component {
                                     className="btn btn-confirm"
                                     onClick={() => this.handleBtnConfirm(item)}
                                   >
-                                    Xác Nhận
+                                    Gửi đơn thuốc
                                   </button>
                                 </td>
                               </tr>
@@ -229,7 +234,7 @@ class ManagePrescription extends Component {
             isOpenModal={isOpenRemedyModal}
             dataModel={dataModel}
             closeRemedyClose={this.closeRemedyClose}
-            sendRemedy={this.sendRemedy}
+            sendRemedy={this.sendPrescription}
           />
         </LoadingOverlay>
       </>

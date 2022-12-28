@@ -237,7 +237,7 @@ class UserRedux extends Component {
       <div className="user-redux-container">
         <div className="title "> User redux</div>
         <div className="col-12">
-          {isGender === true ? "loading gender" : "failed"}
+          {/* {isGender === true ? "loading gender" : "failed"} */}
         </div>
         <div className="user-redux-body">
           <div className="container">

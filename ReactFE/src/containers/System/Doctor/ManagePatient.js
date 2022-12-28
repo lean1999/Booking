@@ -144,17 +144,24 @@ class ManagePatient extends Component {
           text="Loading..."
         >
           <div className="manage-patient-container">
-            <div className="manage-patient-title">
-              Quản lý bệnh nhân khám bệnh{" "}
-            </div>
+            <div className="manage-patient-title">Quản lý bệnh nhân khám </div>
             <div className="manage-patient-body  row">
               <div className="col-4 form-group">
-                <label> Chọn ngày khám</label>
+                <label
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                    color: "white",
+                  }}
+                >
+                  {" "}
+                  Chọn ngày khám:
+                </label>
                 <DatePicker
                   onChange={this.handleChangeDate}
                   className="form-control"
                   value={this.state.currentDate}
-                  minDate={yesterday}
+                  // minDate={yesterday}
                 />
               </div>
               <div className="col-12 table-manage-patient">

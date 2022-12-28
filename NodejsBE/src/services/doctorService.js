@@ -555,7 +555,100 @@ let getListPatientsForDt = (doctorId, date) => {
     }
   });
 };
+let getAllListPatient = (type) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let data = await db.Booking.findAll({
+        where: {
+          statusId: type,
+        },
+        include: [
+          {
+            model: db.User,
+            as: "patientData",
+            attributes: ["email", "address", "gender", "lastName"],
+            include: [
+              {
+                model: db.Allcode,
+                as: "genderData",
+                attributes: ["valueEn", "valueVi"],
+              },
+            ],
+          },
+          {
+            model: db.Allcode,
+            as: "timeTypeDataPatient",
+            attributes: ["valueEn", "valueVi"],
+          },
+        ],
+        raw: false,
+        nest: true,
+      });
+      resolve({
+        errCode: 0,
+        data: data,
+      });
+    } catch (err) {
+      reject(err);
+    }
+  });
+};
+let getaAllPatientAccepts = (type) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let allPatient = "abc";
+      if (type === "All") {
+        allPatient = await db.Booking.findAll({
+          where: { statusId: type },
+        });
+      }
 
+      if (type && type !== "All") {
+        allPatient = await db.Booking.findAll({
+          where: { statusId: type },
+        });
+      }
+      resolve(allPatient);
+    } catch (err) {
+      reject(err);
+    }
+  });
+};
+
+let sendPrescription = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data.email || !data.doctorId || !data.patientId || !data.timeType) {
+        resolve({
+          errCode: 1,
+          errMessage: "Missing parameter",
+        });
+      } else {
+        //update
+        let appointment = await db.Booking.findOne({
+          where: {
+            doctorId: data.doctorId,
+            patientId: data.patientId,
+            timeType: data.timeType,
+            statusId: "S3",
+          },
+          raw: false,
+        });
+        if (appointment) {
+          appointment.statusId = "S4";
+          await appointment.save();
+        }
+        await emailService.sendPrescription(data);
+        resolve({
+          errCode: 0,
+          errMessage: "Success",
+        });
+      }
+    } catch (err) {
+      reject(err);
+    }
+  });
+};
 module.exports = {
   getTopDoctorHome: getTopDoctorHome,
   getAllDoctors: getAllDoctors,
@@ -568,4 +661,7 @@ module.exports = {
   getListPatientsForDoctor: getListPatientsForDoctor,
   sendRemedy: sendRemedy,
   getListPatientsForDt: getListPatientsForDt,
+  getaAllPatientAccepts: getaAllPatientAccepts,
+  getAllListPatient: getAllListPatient,
+  sendPrescription: sendPrescription,
 };

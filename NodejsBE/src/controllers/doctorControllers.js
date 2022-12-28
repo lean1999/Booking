@@ -136,6 +136,19 @@ let sendRemedy = async (req, res) => {
     });
   }
 };
+
+let sendPrescription = async (req, res) => {
+  try {
+    let info = await doctorService.sendPrescription(req.body);
+    res.status(200).json(info);
+  } catch (e) {
+    console.log(e);
+    res.status(200).json({
+      errCode: -1,
+      message: "Error from sever ....",
+    });
+  }
+};
 let getListPatientsForDt = async (req, res) => {
   try {
     let info = await doctorService.getListPatientsForDt(
@@ -151,6 +164,41 @@ let getListPatientsForDt = async (req, res) => {
     });
   }
 };
+
+let getAllListPatient = async (req, res) => {
+  let type = req.query.type;
+
+  if (!type) {
+    return res.status(300).json({
+      err: 1,
+      errMessage: "missing for parameter",
+      patientAccept,
+    });
+  }
+  let patientAccept = await doctorService.getAllListPatient(type);
+  return res.status(200).json({
+    err: 0,
+    errMessage: "success",
+    patientAccept,
+  });
+};
+let getaAllPatientAccept = async (req, res) => {
+  let type = req.query.type;
+
+  if (!type) {
+    return res.status(300).json({
+      err: 1,
+      errMessage: "missing for parameter",
+      patientAccept,
+    });
+  }
+  let patientAccept = await doctorService.getaAllPatientAccepts(type);
+  return res.status(200).json({
+    err: 0,
+    errMessage: "success",
+    patientAccept,
+  });
+};
 module.exports = {
   getDoctorHome: getDoctorHome,
   getAllDoctors: getAllDoctors,
@@ -163,4 +211,7 @@ module.exports = {
   getListPatientsForDoctor: getListPatientsForDoctor,
   sendRemedy: sendRemedy,
   getListPatientsForDt: getListPatientsForDt,
+  getaAllPatientAccept: getaAllPatientAccept,
+  getAllListPatient: getAllListPatient,
+  sendPrescription: sendPrescription,
 };

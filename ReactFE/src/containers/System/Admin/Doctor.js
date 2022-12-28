@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 // import "./Doctor.scss";
 import ManageSchedule from "../Doctor/ManageSchedule";
 import ManagePatient from "../Doctor/ManagePatient";
+import { BiUser, BiLogOut, BiBookContent, BiBrain } from "react-icons/bi";
+import { FaUserNurse, FaUserCircle } from "react-icons/fa";
 class Doctor extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +44,14 @@ class Doctor extends Component {
               <div className="title-app">BOOKING CARE </div>
               <div className="menu-manage-admin">
                 <div className="mn-user">
+                  <FaUserNurse
+                    className="icon-nurse"
+                    style={{
+                      fontSize: "30px",
+                      marginRight: "5px",
+                      marginBottom: "15px",
+                    }}
+                  />{" "}
                   Quản Lý Lịch Trình Bác Sĩ
                   <div className="sub-mn" onClick={this.handShowManageDoctor}>
                     Quản Lý Kế Hoạch Khám
@@ -52,6 +62,7 @@ class Doctor extends Component {
                 </div>
                 <div className="mn-exit">
                   <a href="/" style={{ textDecoration: "none" }}>
+                    <BiLogOut className="icon-logout" />
                     Thoát
                   </a>
                 </div>
@@ -60,7 +71,15 @@ class Doctor extends Component {
             <div className="content-right-admin">
               <div className="header-content-right-admin">
                 <div className="title-manage-admin">Bác Sĩ Quản Lý</div>
-                <div className="info-admin"> Bác Sĩ</div>
+                <div className="info-admin">
+                  <FaUserCircle
+                    style={{
+                      fontSize: "30px",
+                      marginRight: "5px",
+                    }}
+                  />{" "}
+                  Bác Sĩ
+                </div>
               </div>
               <div className="show-content-right-admin">
                 {showManageDoctor === true ? <ManageSchedule /> : <></>}

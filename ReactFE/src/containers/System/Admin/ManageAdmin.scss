@@ -36,7 +36,11 @@
                     font-family: sans-serif;
                     margin-bottom: 20px;
                     cursor: pointer;
-
+                    .icon-user{
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                        margin-right: 5px;
+                    }
                     .sub-mn {
                         font-size: 18px;
                         font-weight: 500;
@@ -52,7 +56,11 @@
                     font-family: sans-serif;
                     margin-bottom: 20px;
                     cursor: pointer;
-
+                    .icon-clinic{
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                        margin-right: 5px;
+                    }
                     .sub-mn {
                         font-size: 18px;
                         font-weight: 500;
@@ -68,7 +76,11 @@
                     font-family: sans-serif;
                     margin-bottom: 20px;
                     cursor: pointer;
-
+                    .icon-specialist{
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                        margin-right: 5px;
+                    }
                     .sub-mn {
                         font-size: 18px;
                         font-weight: 500;
@@ -84,6 +96,11 @@
                     font-family: sans-serif;
                     margin-bottom: 20px;
                     cursor: pointer;
+                    .icon-handlebook{
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                        margin-right: 5px;
+                    }
 
                     .sub-mn {
                         font-size: 18px;
@@ -100,7 +117,11 @@
                     font-family: sans-serif;
                     margin-bottom: 20px;
                     cursor: pointer;
-
+                    .icon-logout{
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                        margin-right: 5px;
+                    }
                     a {
                         text-decoration: none;
                         color: white;
@@ -156,6 +177,7 @@
             }
 
             .show-content-right-admin {
+                
                 padding: 15px;
             }
         }

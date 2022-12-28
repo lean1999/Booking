@@ -11,6 +11,7 @@ import {
 } from "../../../services/userService";
 import _ from "lodash";
 import { LANGUAGES } from "../../../utils";
+import Footer from "../../Footer";
 class DetailSpecialty extends Component {
   constructor(props) {
     super(props);
@@ -166,6 +167,7 @@ class DetailSpecialty extends Component {
               );
             })}
         </div>
+        <Footer />
       </div>
     );
   }

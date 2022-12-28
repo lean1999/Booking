@@ -94,8 +94,19 @@ const postSendRemedy = (data) => {
 
 const getListPatientForDoctor = (data) => {
   return axios.get(
-    `/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`
+    `/api/get-list-patient-for-dt?doctorId=${data.doctorId}&date=${data.date}`
   );
+};
+const getAllPatientAccept = (dataType) => {
+  return axios.get(`/api/get-all-patient-accept?type=${dataType}`);
+};
+
+const getAllListPatient = (dataType) => {
+  return axios.get(`/api/get-all-list-patient?type=${dataType}`);
+};
+
+const postSendPrescription = (data) => {
+  return axios.post(`/api/send-prescription`, data);
 };
 export {
   handleLoginAPI,
@@ -123,4 +134,7 @@ export {
   getAllPatientForDoctor,
   postSendRemedy,
   getListPatientForDoctor,
+  getAllPatientAccept,
+  getAllListPatient,
+  postSendPrescription,
 };

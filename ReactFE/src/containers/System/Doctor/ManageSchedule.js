@@ -81,6 +81,9 @@ class ManageSchedule extends Component {
   handleSaveSchedule = async () => {
     let { rangeTime, currentDate, selectedDoctor } = this.state;
     let result = [];
+    this.setState({
+      rangeTime: rangeTime,
+    });
     if (selectedDoctor && _.isEmpty(selectedDoctor)) {
       toast.error("Select DocTor Required");
       return;
@@ -89,6 +92,7 @@ class ManageSchedule extends Component {
       toast.error("Date Required");
       return;
     }
+
     // let formattedDate = moment(currentDate).unix();
     let formattedDate = new Date(currentDate).getTime();
 

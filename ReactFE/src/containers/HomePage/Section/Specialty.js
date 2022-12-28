@@ -37,7 +37,6 @@ class Specialty extends Component {
           <div className="section-container">
             <div className="section-header">
               <span className="title-section">
-
                 <FormattedMessage id="home-pages.specialty-popular" />
                 <span className="border-load"></span>
               </span>
