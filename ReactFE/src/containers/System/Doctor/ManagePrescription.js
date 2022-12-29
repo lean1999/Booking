@@ -11,7 +11,7 @@ import {
 import { LANGUAGES } from "../../../utils";
 import { FormattedMessage } from "react-intl";
 import NumberFormat from "react-number-format";
-import RemedyModel from "./RemedyModel";
+import PrescriptionModel from "./PrescriptionModel";
 import { toast } from "react-toastify";
 import LoadingOverlay from "react-loading-overlay";
 import CreatePrecription from "./CreatePrecription";
@@ -107,31 +107,31 @@ class ManagePrescription extends Component {
     });
   };
 
-  sendPrescription = async (dataChild) => {
-    let { dataModel } = this.state;
-    this.setState({ isShowLoading: true });
-    let res = await postSendPrescription({
-      email: dataChild.email,
-      imgBase64: dataChild.imgBase64,
-      doctorId: dataModel.doctorId,
-      patientId: dataModel.patientId,
-      timeType: dataModel.timeType,
-      language: this.props.language,
-      patientName: dataModel.patientName,
+  // sendPrescription = async (dataChild) => {
+  //   let { dataModel } = this.state;
+  //   this.setState({ isShowLoading: true });
+  //   let res = await postSendPrescription({
+  //     email: dataChild.email,
+  //     imgBase64: dataChild.imgBase64,
+  //     doctorId: dataModel.doctorId,
+  //     patientId: dataModel.patientId,
+  //     timeType: dataModel.timeType,
+  //     language: this.props.language,
+  //     patientName: dataModel.patientName,
 
-      // ...dataChild,
-    });
-    console.log("res,", res);
-    if (res && res.errCode === 0) {
-      toast.success("Send gmail Success !");
-      this.setState({ isShowLoading: false });
-      this.closeRemedyClose();
-      await this.getDatePatient();
-    } else {
-      toast.error("Send error message.....");
-      this.setState({ isShowLoading: false });
-    }
-  };
+  //     // ...dataChild,
+  //   });
+  //   console.log("res,", res);
+  //   if (res && res.errCode === 0) {
+  //     toast.success("Send gmail Success !");
+  //     this.setState({ isShowLoading: false });
+  //     this.closeRemedyClose();
+  //     await this.getDatePatient();
+  //   } else {
+  //     toast.error("Send error message.....");
+  //     this.setState({ isShowLoading: false });
+  //   }
+  // };
   render() {
     let toDay = new Date();
     let toDayString =
@@ -230,7 +230,7 @@ class ManagePrescription extends Component {
               </div>
             </div>
           </div>
-          <RemedyModel
+          <PrescriptionModel
             isOpenModal={isOpenRemedyModal}
             dataModel={dataModel}
             closeRemedyClose={this.closeRemedyClose}

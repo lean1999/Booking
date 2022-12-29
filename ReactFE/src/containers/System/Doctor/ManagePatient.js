@@ -12,6 +12,7 @@ import { LANGUAGES } from "../../../utils";
 import { FormattedMessage } from "react-intl";
 import NumberFormat from "react-number-format";
 import RemedyModel from "./RemedyModel";
+import WatchPatientModel from "./WatchPatientModel";
 import { toast } from "react-toastify";
 import LoadingOverlay from "react-loading-overlay";
 import CreatePrecription from "./CreatePrecription";
@@ -22,6 +23,7 @@ class ManagePatient extends Component {
       currentDate: moment(new Date()).startOf("day").valueOf(),
       dataPatient: [],
       isOpenRemedyModal: false,
+      isOpenWatchPatient: false,
       dataModel: {},
       isShowLoading: false,
       showCreatePresiton: false,
@@ -86,6 +88,7 @@ class ManagePatient extends Component {
     );
   };
   handleBtnConfirm = (item) => {
+    alert("Bạn đã chắc chắn muốn gửi hóa đơn xác nhận");
     let data = {
       doctorId: item.doctorId,
       patientId: item.patientId,
@@ -100,9 +103,25 @@ class ManagePatient extends Component {
     console.log("data", data);
   };
 
+  handleBtnWatch = (item) => {
+    let data = {
+      doctorId: item.doctorId,
+      patientId: item.patientId,
+      email: item.patientData.email,
+      timeType: item.timeType,
+      patientName: item.patientData.lastName,
+    };
+    this.setState({
+      isOpenWatchPatient: true,
+      dataModel: data,
+    });
+    console.log("data", data);
+  };
+
   closeRemedyClose = () => {
     this.setState({
       isOpenRemedyModal: false,
+      isOpenWatchPatient: false,
       dataModel: {},
     });
   };
@@ -134,7 +153,8 @@ class ManagePatient extends Component {
   render() {
     let yesterday = new Date(new Date().setHours(0, 0, 0, 0));
     let { language } = this.props;
-    let { dataPatient, isOpenRemedyModal, dataModel } = this.state;
+    let { dataPatient, isOpenRemedyModal, dataModel, isOpenWatchPatient } =
+      this.state;
 
     return (
       <>
@@ -205,6 +225,13 @@ class ManagePatient extends Component {
                                 <td>{gender}</td>
                                 <td className="one">
                                   <button
+                                    className="btn btn-watch"
+                                    onClick={() => this.handleBtnWatch(item)}
+                                  >
+                                    {" "}
+                                    See more
+                                  </button>
+                                  <button
                                     className="btn btn-confirm"
                                     onClick={() => this.handleBtnConfirm(item)}
                                   >
@@ -232,6 +259,11 @@ class ManagePatient extends Component {
               </div>
             </div>
           </div>
+          <WatchPatientModel
+            isOpenModal={isOpenWatchPatient}
+            dataModel={dataModel}
+            closeRemedyClose={this.closeRemedyClose}
+          />
           <RemedyModel
             isOpenModal={isOpenRemedyModal}
             dataModel={dataModel}

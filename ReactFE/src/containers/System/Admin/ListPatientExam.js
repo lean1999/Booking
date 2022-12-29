@@ -52,8 +52,7 @@ class ListPatientExam extends Component {
               </tr>
             </thead>
             <tbody>
-              {listPatient &&
-                listPatient.length > 0 &&
+              {listPatient && listPatient.length > 0 ? (
                 listPatient.map((item, index) => {
                   console.log("item", item);
                   return (
@@ -66,7 +65,18 @@ class ListPatientExam extends Component {
                       <td>{item.patientData.email}</td>
                     </tr>
                   );
-                })}
+                })
+              ) : (
+                <div className="tbl-content">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <h1>NO DATA</h1>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </tbody>
           </table>
         </div>
